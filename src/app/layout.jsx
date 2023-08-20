@@ -40,18 +40,18 @@ export async function generateMetadata() {
     //   description: siteConfig.description,
     //   siteName: siteConfig.name,
     // },
-    twitter: {
-      card: "summary_large_image",
-      title: language.app.meta.title,
-      description: language.app.meta.description,
-      // images: [`${siteConfig.url}/og.jpg`],
-      creator: "@ansagang",
-    },
-    icons: {
-      icon: "/favicon.ico",
-      shortcut: "/favicon-16x16.png",
-      apple: "/apple-touch-icon.png",
-    },
+    // twitter: {
+    //   card: "summary_large_image",
+    //   title: language.app.meta.title,
+    //   description: language.app.meta.description,
+    //   // images: [`${siteConfig.url}/og.jpg`],
+    //   creator: "@ansagang",
+    // },
+    // icons: {
+    //   icon: "/favicon.ico",
+    //   shortcut: "/favicon-16x16.png",
+    //   apple: "/apple-touch-icon.png",
+    // },
   }
 }
 

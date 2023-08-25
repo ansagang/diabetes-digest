@@ -74,7 +74,7 @@ export async function login({ email, password, supabase, provider, language }) {
                             message: language.res.loginResult
                         }
                     } else {
-                        const res = supabaseErrors({error, language})
+                        const res = supabaseErrors({ error, language })
                         return res
                     }
                 } else {
@@ -126,7 +126,7 @@ export async function register({ email, supabase, language, lang, password, conf
                         message: language.res.registrationResult
                     }
                 } else {
-                    const res = supabaseErrors({error, language})
+                    const res = supabaseErrors({ error, language })
                     return res
                 }
             }

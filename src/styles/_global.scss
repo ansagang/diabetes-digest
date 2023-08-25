@@ -67,8 +67,8 @@ button {
 
     &.secondary {
         background-color: $bg_color;
-        color: $primary_color;
-        // border: 2px solid $bg_color_lighter;
+        color: $accent_color;
+        border: 2px solid $accent_color;
         // width: 100%;
     }
 

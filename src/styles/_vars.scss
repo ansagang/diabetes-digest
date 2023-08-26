@@ -11,6 +11,7 @@ $h2_font_size: 26px;
 $h3_font_size: 17px;
 $p_font_size: 16px;
 $input_font_size: 14px;
+$button_font_size: 15px;
 $bolder_font_weight: 800;
 $bold_font_weight: 700;
 $medium_font_weight: 600;
@@ -25,7 +26,7 @@ $pd_small: 70px 0;
 $pd_block: 80px 60px;
 $pd_nav: 25px 0;
 $pd_input: 17px;
-$pd_button: 15px 25px;
+$pd_button: 10px 17px;
 $pd_plate: 30px 20px;
 $pd_medium_bottom: 0 0 80px 0;
 // z-index
@@ -41,5 +42,5 @@ $breakpoint_phone: 700px;
 $breakpoint_phone_two: 500px;
 // border radius
 $input_radius: 5px;
-$button_radius: 7px;
+$button_radius: 5px;
 $plate_radius: 13px;

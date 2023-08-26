@@ -8,7 +8,7 @@
     &__fluid {
         margin: $mb_auto;
         padding: 0 20px;
-        max-width: 1430px;
+        max-width: 1530px;
     }
 }
 
@@ -32,7 +32,7 @@
 
     & h3 {
         font-size: $h3_font_size;
-        font-weight: $light_font_weight;
+        font-weight: $medium_font_weight;
     }
 }
 
@@ -59,6 +59,13 @@
 }
 
 button {
+    font-size: $button_font_size !important;
+    font-weight: $light_font_weight !important;
+    border-radius: $button_radius;
+    cursor: pointer;
+    padding: $pd_button;
+    display: flex;
+    align-items: center;
     &.primary {
         border: 2px solid $accent_color;
         background-color: $accent_color;
@@ -75,8 +82,12 @@ button {
     &.text{
         border: none;
         background-color: $bg_color;
-        color: $primary_color;
+        color: $accent_color;
         border: none;
+    }
+
+    & svg{
+        margin-right: 7px;
     }
 }
 
@@ -90,5 +101,19 @@ button {
         display: grid;
         gap:30px;
         margin-top: 40px;
+    }
+}
+
+.link{
+    color: $secondary_color;
+    transition: color 0.15s ease;
+    cursor: pointer;
+    font-size: $p_font_size;
+    font-weight: $medium_font_weight;
+    &.active{
+        color: $primary_color;
+    }
+    &:hover{
+        color: $primary_color;
     }
 }

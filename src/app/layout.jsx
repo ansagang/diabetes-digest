@@ -1,16 +1,17 @@
 import '../styles/style.scss'
 import { Montserrat } from 'next/font/google'
-
-import supabase from '@/db/supabase-server'
 import { getLanguage } from '@/lib/get-language'
 import { getUser } from '@/lib/auth'
 import NotificationProvider from '@/context/notification-provider'
+import { cookies } from 'next/headers'
+import getSupabase from '@/db/supabase-server'
 
-const font = Montserrat({ subsets: ['latin'] })
+const font = Montserrat({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] })
 export const revalidate = 0;
 
 export async function generateMetadata() {
 
+  const supabase = getSupabase(cookies)
   const { data: user } = await getUser({ supabase })
   const language = await getLanguage({ user })
 

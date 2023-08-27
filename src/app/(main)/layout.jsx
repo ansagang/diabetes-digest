@@ -12,13 +12,13 @@ export default async function MainLayout({ children }) {
     const language = await getLanguage({ user })
 
     return (
-        <>
+        <div className="wrapper">
             <Header language={language} user={user} />
             {children}
             <Footer language={language} user={user} />
             <Header language={language} user={user} />
             <Header language={language} user={user} />
             <Header language={language} user={user} />
-        </>
+        </div>
     )
 }

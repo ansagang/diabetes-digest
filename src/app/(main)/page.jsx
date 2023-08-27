@@ -3,7 +3,7 @@ import { getUser } from "@/lib/auth";
 import { getLanguage } from "@/lib/get-language";
 import getSupabase from "@/db/supabase-server";
 import { cookies } from "next/headers";
-import Hero from "@/components/sections/Hero";
+import Hero from "@/components/sections/hero";
 
 export async function generateMetadata() {
 

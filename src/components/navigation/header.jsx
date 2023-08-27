@@ -1,11 +1,30 @@
+"use client"
+
 import { Icons } from "@/config/icons"
 import Image from "next/image"
 import Button from "@/components/ui/button"
 import NavLink from "@/components/ui/nav-link"
+import useScrollDirection from "@/hooks/use-scroll-direction"
+import { useState, useEffect } from "react"
 
 export default function Header({ language, user }) {
+    // const [sticky, setSticky] = useState(true)
+
+    // useScrollDirection({
+    //     effect: ({ prevPos, currPos }) => {
+    //         const isShow = currPos.y > prevPos.y
+    //         if (isShow !== sticky) setSticky(isShow)
+    //     }
+    // })
+
+    // useEffect(() => {
+    //     if (window.scrollY === 0) {
+    //         setSticky(true)
+    //     }
+    // }, [sticky])
     return (
-        <header>
+        // <header className={sticky ? "header active" : "header"} >
+        <header className='header active' >
             <div className="container">
                 <div className="header__inner">
                     <nav className="header__nav">
@@ -71,6 +90,6 @@ export default function Header({ language, user }) {
                     </nav>
                 </div>
             </div>
-        </header>
+        </header >
     )
 }

@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-function useScrollView(element, repeat) {
+function useInView({ repeat }) {
 
-    const [visible, setVisible] = useState()
+    const [inView, setInView] = useState()
+    const [repeated, setRepeated] = useState(false)
+
+    const ref = useRef(null)
 
     useEffect(() => {
         const observerCallback = (entries) => {
             entries.forEach((entry) => {
                 if (repeat) {
                     if (entry.isIntersecting) {
-                        setVisible(true)
+                        setInView(true)
                     } else {
-                        setVisible(false)
+                        setInView(false)
                     }
                 } else {
-                    if (entry.intersectionRatio > 0) {
-                        if (entry.isIntersecting) {
-                            setVisible(true)
+                    if (entry.isIntersecting) {
+                        if (repeated) {
+                            setInView(false)
+                            setRepeated(false)
                         } else {
-                            setVisible(false)
+                            setInView(true)
+                            setRepeated(true)
                         }
                     }
                 }
@@ -26,8 +31,8 @@ function useScrollView(element, repeat) {
         };
 
         const observer = new IntersectionObserver(observerCallback);
-        if (element) {
-            observer.observe(element);
+        if (ref.current) {
+            observer.observe(ref.current);
         }
 
         return () => {
@@ -65,7 +70,10 @@ function useScrollView(element, repeat) {
     // }, [element, repeat])
 
 
-    return visible
+    return {
+        inView,
+        ref
+    }
 }
 
-export default useScrollView;
+export default useInView;

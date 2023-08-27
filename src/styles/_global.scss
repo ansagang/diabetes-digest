@@ -19,9 +19,10 @@
 
     & h1 {
         font-size: max(48px,min(5vw,76px));
-        background: linear-gradient(180deg, #555, $fg_color);
+        background: linear-gradient(180deg, #666, $fg_color);
         background-clip: text;
-        -webkit-text-fill-color: transparent;
+        // -webkit-text-fill-color: transparent;
+        // color: transparent;
         font-weight: $bolder_font_weight;
     }
 
@@ -116,4 +117,23 @@ button {
     &:hover{
         color: $primary_color;
     }
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column; 
+    min-height: 100%;
+}
+
+main{
+    flex: 1 0 auto;
+    position: relative;
+}
+
+header{
+    flex: 0 1 auto;
+}
+
+footer{
+    flex: 0 0 auto;
 }

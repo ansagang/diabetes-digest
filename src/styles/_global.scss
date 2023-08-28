@@ -57,6 +57,10 @@
     &__big{
         padding: $pd_big;
     }
+
+    &__block{
+        padding: $pd_block;
+    }
 }
 
 button {
@@ -120,9 +124,15 @@ button {
 }
 
 .wrapper{
-    display: flex;
-    flex-direction: column; 
-    min-height: 100%;
+    &__main{
+        flex-direction: column; 
+        min-height: 100%;
+        display: flex;
+    }
+    &__auth{
+        height: 100vh;
+        display: flex;
+    }
 }
 
 main{

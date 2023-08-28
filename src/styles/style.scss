@@ -139,8 +139,8 @@
             align-items: center;
             justify-content: center;
             &_img{
-                width: 60px;
-                height: 60px;
+                width: 70px;
+                height: 70px;
                 margin-right: 20px;
             }
             &_title{
@@ -174,3 +174,12 @@
         }
     }
 }
+
+.auth{
+    width: 40%;
+}
+
+.background{
+    width: 60%;
+}
+

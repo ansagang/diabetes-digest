@@ -20,9 +20,11 @@ export async function middleware(req) {
           )
         }
       } else {
-        return NextResponse.redirect(
-          new URL('/', req.url)
-        )
+        if (route.access) {
+          return NextResponse.redirect(
+            new URL('/', req.url)
+          )
+        }
       }
     }
   }

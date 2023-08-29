@@ -4,6 +4,7 @@
     margin: $mb_auto;
     max-width: 1330px;
     padding: 0 20px;
+    height: 100%;
 
     &__fluid {
         margin: $mb_auto;
@@ -71,16 +72,33 @@ button {
     padding: $pd_button;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: 0.1s ease filter;
     &.primary {
         border: 2px solid $accent_color;
         background-color: $accent_color;
         color: $bg_color;
+        
+
+        & svg{
+            margin-right: 7px;
+        }
+
+        &:disabled{
+            filter: brightness(50%);
+        }
     }
 
     &.secondary {
         background-color: $bg_color;
         color: $accent_color;
         border: 2px solid $accent_color;
+        
+
+        & svg{
+            margin-right: 7px;
+        }
         // width: 100%;
     }
 
@@ -89,10 +107,6 @@ button {
         background-color: $bg_color;
         color: $accent_color;
         border: none;
-    }
-
-    & svg{
-        margin-right: 7px;
     }
 }
 
@@ -146,4 +160,25 @@ header{
 
 footer{
     flex: 0 0 auto;
+}
+
+.input{
+    margin-top: 7px;
+    &__password{
+        position: relative;
+        & button{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            right: 0;
+            background: transparent;
+        }
+        & svg{
+            stroke: $secondary_color_2;
+            &.active{
+                stroke: $secondary_color;
+            }
+        }
+    }
 }

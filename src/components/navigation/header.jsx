@@ -81,7 +81,7 @@ export default function Header({ language, user }) {
                                         :
                                         (
                                             <NavLink href={'/login'}>
-                                                <Button type='secondary'>{language.app.buttons.signin}</Button>
+                                                <Button type='secondary'>{language.app.buttons.login}</Button>
                                             </NavLink>
                                         )
                                 }

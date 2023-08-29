@@ -10,12 +10,9 @@ export const loginValidation = ({ email, password, language }) => {
     return errors
 }
 
-export const registerValidation = ({ email, password, language, username, confirmPassword }) => {
+export const registerValidation = ({ email, password, language, confirmPassword }) => {
     const errors = []
-    if (username && password && email && confirmPassword) {
-        if (username.length < 3) {
-            errors.push(language.res.usernameLengthError)
-        }
+    if (password && email && confirmPassword) {
 
         if (password === confirmPassword) {
             if (password.length < 6) {

@@ -18,7 +18,7 @@ export async function generateMetadata() {
   return {
     title: {
       default: language.app.meta.title,
-      template: `%s || ${language.app.meta.title}`
+      template: `%s - ${language.app.meta.title}`
     },
     description: language.app.meta.description,
     keywords: language.app.meta.keywords,

@@ -98,38 +98,40 @@ export async function login({ email, password, supabase, provider, language }) {
     }
 }
 
-export async function register({ email, supabase, language, lang, password, confirmPassword, username }) {
+export async function register({ email, supabase, language, lang, password, confirmPassword, fullname }) {
     try {
-        const errors = registerValidation({ email, password, language, username, confirmPassword })
+        const errors = registerValidation({ email, password, language, confirmPassword })
         if (errors.length === 0) {
-            const { data } = await supabase.from("profiles").select("*").eq("email", email).single();
-            if (data) {
+            // const { data } = await supabase.from("profiles").select("*").eq("email", email).single();
+            // if (data) {
+            //     return {
+            //         success: false,
+            //         message: language.res.emailExistsError
+            //     }
+            // } else {
+            const { error } = await supabase.auth.signUp({
+                email: email,
+                password: password,
+                options: {
+                    data: {
+                        lang: lang,
+                        role: 'user',
+                        full_name: fullname,
+                        email: email
+                    }
+                }
+            })
+
+            if (!error) {
                 return {
-                    success: false,
-                    message: language.res.emailExistsError
+                    success: true,
+                    message: language.res.registrationResult
                 }
             } else {
-                const { error } = await supabase.auth.signUp({
-                    email: email,
-                    password: password,
-                    options: {
-                        data: {
-                            lang: lang,
-                            user_name: username
-                        }
-                    }
-                })
-
-                if (!error) {
-                    return {
-                        success: true,
-                        message: language.res.registrationResult
-                    }
-                } else {
-                    const res = supabaseErrors({ error, language })
-                    return res
-                }
+                const res = supabaseErrors({ error, language })
+                return res
             }
+            // }
         } else {
             return {
                 success: false,

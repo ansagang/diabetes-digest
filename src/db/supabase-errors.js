@@ -1,5 +1,10 @@
 export default function supabaseErrors ({error, language}) {
     switch (error.message) {
+        case "User already registered":
+            return {
+                success: false,
+                message: language.res.emailExistsError
+            }
         case "Email not confirmed":
             return {
                 success: false,

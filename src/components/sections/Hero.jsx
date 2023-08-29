@@ -20,7 +20,7 @@ export default function Hero({ language }) {
                         <div className="hero__info info">
                             <p>{language.app.sections.hero.info}</p>
                         </div>
-                        <Link href={'/login'}><Button type='primary'>{language.app.buttons.signin}</Button></Link>
+                        <Link href={'/login'}><Button type='primary'>{language.app.buttons.login}</Button></Link>
                     </div>
                 </div>
             </div>

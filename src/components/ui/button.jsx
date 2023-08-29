@@ -1,7 +1,7 @@
 "use client"
 
-export default function Button({ type, children, ...props }) {
+export default function Button({ type, children, className, ...props }) {
     return (
-        <button className={type} {...props}>{children}</button>
+        <button type="button" className={type + ' ' + className} {...props}>{children}</button>
     )
 }

@@ -92,32 +92,38 @@ a{
     text-decoration: none;
 }
 
-// input[type="email"],
-// input[type="text"],
-// input[type="password"],
-// input[type="number"],
-// select,
-// textarea {
-//     &::placeholder{
-//         color: $bg_color_darker;
-//     }
-//     border: none;
-//     padding: $pd_input;
-//     border-radius: $input_radius;
-//     font-size: $input_font_size;
-//     background-color: $bg_color;
-//     color: $primary_color;
-//     resize: none;
-//     border: 2px solid $bg_color_lighter;
-//     width: 100%;
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    &::placeholder{
+        color: $secondary_color_2;
+    }
+    border: none;
+    padding: $pd_input;
+    border-radius: $input_radius;
+    font-size: $input_font_size;
+    background-color: $bg_color;
+    color: $primary_color;
+    resize: none;
+    border: 1px solid $secondary_color_2;
+    width: 100%;
+    // margin-top: 20px;
     
-//     &:hover{
-//         border: 2px solid $accent_color
-//     }
-//     &:focus{
-//         border: 2px solid $accent_color;
-//     }
-// }
+    // &:hover{
+    //     border: 1px solid $accent_color
+    // }
+    &:focus{
+        border: 1px solid $primary_color;
+    }
+}
+
+label{
+    color: $primary_color;
+    font-weight: $light_font_weight;
+}
 
 // input[type="number"]{
 //     margin-bottom: 0;

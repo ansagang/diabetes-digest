@@ -20,7 +20,7 @@
 
     & h1 {
         font-size: max(48px,min(5vw,76px));
-        background: linear-gradient(180deg, #666, $fg_color);
+        background: linear-gradient(180deg, #7e7e7e, $fg_color);
         background-clip: text;
         // -webkit-text-fill-color: transparent;
         // color: transparent;
@@ -82,7 +82,7 @@ button {
         
 
         & svg{
-            margin-right: 7px;
+            margin-right: 10px;
         }
 
         &:disabled{
@@ -97,7 +97,7 @@ button {
         
 
         & svg{
-            margin-right: 7px;
+            margin-right: 10px;
         }
         // width: 100%;
     }

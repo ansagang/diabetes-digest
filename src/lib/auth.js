@@ -1,6 +1,14 @@
 import { loginValidation, registerValidation } from "./validation";
 import supabaseErrors from "@/db/supabase-errors";
 
+export const auth = {
+    getUser: (props) => getUser(props),
+    login: (props) => login(props),
+    register: (props) => register(props),
+    update: (props) => update(props)
+    // logino: (props) => logino(props)
+}
+
 export async function getUser({ supabase }) {
     // const res = await fetch(`${process.env.URL}/api/auth/login-session?lang=en`, {
     //     method: 'POST',
@@ -37,7 +45,7 @@ export async function getUser({ supabase }) {
 }
 
 export async function login({ email, password, supabase, provider, language }) {
-    // const res = await fetch(`/api/auth/login?lang=${language.lang}`, {
+    // const res = await fetch(`/auth/login?lang=${language.lang}`, {
     //     method: 'POST',
     //     body: JSON.stringify({ email: email, password: password, provider: provider }),
     // })
@@ -47,14 +55,14 @@ export async function login({ email, password, supabase, provider, language }) {
 
     try {
         if (provider) {
-            const { error } = await supabase.auth.signInWithOAuth({ provider: provider, options: { redirectTo: `http://localhost:3000/api/auth/callback` } });
+            const { error } = await supabase.auth.signInWithOAuth({ provider: provider, options: { redirectTo: `http://localhost:3000/auth/callback` } });
             if (!error) {
                 return {
                     success: true,
                     message: language.res.loginResult
                 }
             } else {
-                return {
+                throw {
                     success: false,
                     message: error.toString()
                 }
@@ -62,12 +70,13 @@ export async function login({ email, password, supabase, provider, language }) {
         } else {
             const errors = loginValidation({ email, password, language })
             if (errors.length === 0) {
-                const { data } = await supabase.from("profiles").select("*").eq("email", email).single();
+                const { data } = await supabase.from("profiles").select().eq('email', email).maybeSingle();
                 if (data) {
                     const { error } = await supabase.auth.signInWithPassword({
                         email,
-                        password,
+                        password
                     })
+                    console.log(error);
                     if (!error) {
                         return {
                             success: true,
@@ -93,7 +102,32 @@ export async function login({ email, password, supabase, provider, language }) {
     } catch (err) {
         return {
             success: false,
-            message: err.toString()
+            message: err.message
+        }
+    }
+}
+
+export async function update({ email, data }) {
+    try {
+        if (email) {
+            const { error } = await supabase.from("profiles").update(data).eq("email", email)
+            if (!error) {
+                return {
+                    success: true,
+                }
+            } else {
+                return {
+                    success: false,
+                }
+            }
+        } else {
+            return {
+                success: false,
+            }
+        }
+    } catch (err) {
+        return {
+            success: false,
         }
     }
 }
@@ -102,36 +136,36 @@ export async function register({ email, supabase, language, lang, password, conf
     try {
         const errors = registerValidation({ email, password, language, confirmPassword })
         if (errors.length === 0) {
-            // const { data } = await supabase.from("profiles").select("*").eq("email", email).single();
-            // if (data) {
-            //     return {
-            //         success: false,
-            //         message: language.res.emailExistsError
-            //     }
-            // } else {
-            const { error } = await supabase.auth.signUp({
-                email: email,
-                password: password,
-                options: {
-                    data: {
-                        lang: lang,
-                        role: 'user',
-                        full_name: fullname,
-                        email: email
-                    }
-                }
-            })
-
-            if (!error) {
+            const { data } = await supabase.from("profiles").select("*").eq("email", email).maybeSingle();
+            if (data) {
                 return {
-                    success: true,
-                    message: language.res.registrationResult
+                    success: false,
+                    message: language.res.emailExistsError
                 }
             } else {
-                const res = supabaseErrors({ error, language })
-                return res
+                const { error } = await supabase.auth.signUp({
+                    email: email,
+                    password: password,
+                    options: {
+                        data: {
+                            lang: lang,
+                            role: 'user',
+                            full_name: fullname,
+                            email: email
+                        }
+                    }
+                })
+
+                if (!error) {
+                    return {
+                        success: true,
+                        message: language.res.registrationResult
+                    }
+                } else {
+                    const res = supabaseErrors({ error, language })
+                    return res
+                }
             }
-            // }
         } else {
             return {
                 success: false,
@@ -141,7 +175,7 @@ export async function register({ email, supabase, language, lang, password, conf
     } catch (err) {
         return {
             success: false,
-            message: err.toString()
+            message: err.message
         }
     }
 }

@@ -66,7 +66,7 @@ export default function Header({ language, user }) {
                             <li className="header__nav-li">
                                 <NavLink href={'/donation'}>
                                     {/* <Icons.heart /> */}
-                                    <Button type='primary'><Icons.heart width='15px' height='15px' fill="#FFFFFF" />{language.app.buttons.donate}</Button>
+                                    <Button type='primary'><Icons.heart width='17px' height='17px' fill="#FFFFFF" />{language.app.buttons.donate}</Button>
                                 </NavLink>
                             </li>
                             <li className="header__nav-buttons">
@@ -74,8 +74,7 @@ export default function Header({ language, user }) {
                                     user ?
                                         (
                                             <NavLink href={'/account'}>
-                                                <Icons.account />
-                                                <span>{language.app.pages.account.meta.title}</span>
+                                                <Button type='secondary'><Icons.account width='17px' height='17px' />{language.app.pages.account.meta.title}</Button>
                                             </NavLink>
                                         )
                                         :

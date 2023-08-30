@@ -1,14 +1,18 @@
 "use client"
 
+import { useState, useTransition } from "react"
+
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+
 import Input from "@/components/ui/input"
 import InputPassword from "@/components/ui/input-password"
-import Link from "next/link"
 import Button from "@/components/ui/button"
-import { useState, useTransition } from "react"
-import { register } from "@/lib/auth"
-import responseHandler from "@/lib/response-handler"
-import { useRouter } from "next/navigation"
+
 import supabase from "@/db/supabase-client"
+
+import { auth } from "@/lib/auth"
+import responseHandler from "@/lib/response-handler"
 
 export default function RegisterForm({ language }) {
 
@@ -22,32 +26,19 @@ export default function RegisterForm({ language }) {
     const notification = responseHandler({ language })
     const router = useRouter()
 
-    async function signup({ email, password, confirmPassword, fullname }) {
-
+    async function register({ email, password, confirmPassword, fullname }) {
         // startTransition(async () => {
-        //     try {
-        //         const res = await register({ email, password, confirmPassword, fullname, lang, supabase, language })
-        //         notification({ message: res.message, type: res.success })
-        //         if (res.success) {
-        //             router.push('/')
-        //         }
-        //     } catch (err) {
-        //         console.log(err);
-        //     }
-        // })
         try {
-            startTransition(async () => {
-                const res = await register({ email, password, confirmPassword, fullname, lang, supabase, language })
-                notification({ message: res.message, type: res.success })
-                if (res.success) {
-                    startTransition(async () => {
-                        router.push('/')
-                    })
-                }
-            })
+            const res = await auth.register({ email, password, confirmPassword, fullname, lang, supabase, language })
+            notification({ message: res.message, type: res.success ? "success" : "error" })
+            router.refresh()
+            if (res.success) {
+                router.push('/')
+            }
         } catch (err) {
-            console.log(err);
+            notification({ message: res.message, type: "error" })
         }
+        // })
     }
 
     return (
@@ -62,14 +53,17 @@ export default function RegisterForm({ language }) {
                             <p>{language.app.sections.register.info}</p>
                         </div>
                     </div>
-                    <form action="" className="auth__form">
+                    <form className="auth__form" onSubmit={(e) => {
+                        e.preventDefault()
+                        register({ email, password, confirmPassword, fullname })
+                    }}>
                         <div className="auth__form-input">
                             <label>{language.app.labels.fullname}</label>
                             <Input type='text' placeholder="Әбен Аңсар Ерланұлы" value={fullname} onChange={((e) => setFullname(e.target.value))} />
                         </div>
                         <div className="auth__form-input">
                             <label>{language.app.labels.email}</label>
-                            <Input type='email' placeholder="ansagaang@gmail.com" value={email} onChange={((e) => setEmail(e.target.value))} />
+                            <Input type='text' placeholder="ansagaang@gmail.com" value={email} onChange={((e) => setEmail(e.target.value))} />
                         </div>
                         <div className="auth__form-input">
                             <label>{language.app.labels.password}</label>
@@ -79,7 +73,7 @@ export default function RegisterForm({ language }) {
                             <label>{language.app.labels.confirmPassword}</label>
                             <InputPassword placeholder="123456789" value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} />
                         </div>
-                        <Button onClick={() => signup({ email, password, confirmPassword, fullname })} type='primary' className='auth__button' disabled={isPending}>{language.app.buttons.register}</Button>
+                        <Button form={true} type='primary' className='auth__button' disabled={isPending}>{language.app.buttons.register}</Button>
                     </form>
                     <div className="auth__link">
                         <span>{language.app.labels.account}</span> <Link className="link" href={'/login'}>{language.app.buttons.login}</Link>

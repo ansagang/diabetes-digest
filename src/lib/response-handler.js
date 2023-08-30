@@ -34,6 +34,7 @@ export default function responseHandler({ language }) {
             dispatch({
                 type: type,
                 message: message,
+                title: title
             })
         }
     }

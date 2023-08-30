@@ -1,7 +1,7 @@
 "use client"
 
-export default function Button({ type, children, className, ...props }) {
+export default function Button({ form, type, children, className, ...props }) {
     return (
-        <button type="button" className={type + ' ' + className} {...props}>{children}</button>
+        <button type={form ? 'submit' : 'button'} className={type + ' ' + className} {...props}>{children}</button>
     )
 }

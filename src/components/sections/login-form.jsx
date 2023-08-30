@@ -1,15 +1,21 @@
 "use client"
 
+import { useEffect, useState, useTransition } from "react"
+
+import { useRouter } from "next/navigation"
+import Link from "next/link"
+
 import Input from "@/components/ui/input"
 import InputPassword from "@/components/ui/input-password"
-import Link from "next/link"
 import Button from "@/components/ui/button"
-import { providers } from "@/config/providers"
-import { useState, useTransition } from "react"
-import { login } from "@/lib/auth"
-import responseHandler from "@/lib/response-handler"
-import { useRouter } from "next/navigation"
+
 import supabase from "@/db/supabase-client"
+// import { supabase } from "@/db/supabase"
+
+import responseHandler from "@/lib/response-handler"
+import { auth } from "@/lib/auth"
+
+import { providers } from "@/config/providers"
 
 export default function LoginForm({ language }) {
 
@@ -20,22 +26,20 @@ export default function LoginForm({ language }) {
     const notification = responseHandler({ language })
     const router = useRouter()
 
-    async function signin({ email, password, provider }) {
-
-        startTransition(async () => {
-            try {
-                const res = await login({ email, password, supabase, provider, language })
-                notification({ message: res.message, type: res.success })
-                if (res.success) {
-                    router.push('/')
-                    router.refresh()
-                }
-            } catch (err) {
-                console.log(err);
+    async function login({ email, password, provider }) {
+        // startTransition(async () => {
+        try {
+            const res = await auth.login({ email, password, supabase, provider, language })
+            notification({ message: res.message, type: res.success ? 'success' : 'error' })
+            if (res.success) {
+                router.refresh()
+                router.push('/')
             }
-        })
+        } catch (err) {
+            notification({ message: err.message, type: 'error' })
+        }
+        // })
     }
-
 
     return (
         <section className="auth">
@@ -49,16 +53,19 @@ export default function LoginForm({ language }) {
                             <p>{language.app.sections.login.info}</p>
                         </div>
                     </div>
-                    <form action="" className="auth__form">
+                    <form id="form" className="auth__form" onSubmit={(e) => {
+                        e.preventDefault()
+                        login({ email: email, password: password })
+                    }}>
                         <div className="auth__form-input">
                             <label>{language.app.labels.email}</label>
-                            <Input type='email' placeholder="ansagaang@gmail.com" value={email} onChange={((e) => setEmail(e.target.value))} />
+                            <Input type='text' placeholder="ansagaang@gmail.com" value={email} onChange={((e) => setEmail(e.target.value))} />
                         </div>
                         <div className="auth__form-input">
                             <label>{language.app.labels.password}</label>
                             <InputPassword placeholder="123456789" value={password} onChange={((e) => setPassword(e.target.value))} />
                         </div>
-                        <Button onClick={() => signin({ email: email, password: password })} type='primary' className='auth__button' disabled={isPending}>{language.app.buttons.login}</Button>
+                        <Button form={true} type='primary' className='auth__button' disabled={isPending}>{language.app.buttons.login}</Button>
                         {/* <Link className="auth__reset link" href={'/reset-password'}>{language.app.labels.resetPassword}</Link> */}
                         <div className="auth__providers">
                             {
@@ -66,8 +73,8 @@ export default function LoginForm({ language }) {
                                     (
                                         providers.length > 0 ?
                                             (
-                                                providers.map((provider) => (
-                                                    <button onClick={() => signin({ provider: provider.title })} title={provider.title} className="auth__provider">
+                                                providers.map((provider, key) => (
+                                                    <button key={key} type="button" onClick={() => login({ provider: provider.title })} title={provider.title} className="auth__provider">
                                                         {provider.logo}
                                                     </button>
                                                 ))

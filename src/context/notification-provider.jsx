@@ -2,8 +2,6 @@
 
 import { createContext, useContext, useReducer } from "react";
 
-import { v4 } from "uuid";
-
 import Notification from "./notification";
 
 const NotificationContext = createContext();
@@ -41,7 +39,7 @@ export const NotificationGet = () => {
         dispatch({
             type: "ADD_NOTIFICATION",
             payload: {
-                id: v4(),
+                id: Date.now(),
                 ...props
             }
         })

@@ -13,6 +13,7 @@ export async function generateMetadata() {
 
   const supabase = getSupabase(cookies)
   const { data: user } = await getUser({ supabase })
+
   const language = await getLanguage({ user })
 
   return {

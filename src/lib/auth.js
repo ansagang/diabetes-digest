@@ -132,9 +132,9 @@ export async function update({ email, data }) {
     }
 }
 
-export async function register({ email, supabase, language, lang, password, confirmPassword, fullname }) {
+export async function register({ email, supabase, language, lang, password, fullname }) {
     try {
-        const errors = registerValidation({ email, password, language, confirmPassword })
+        const errors = registerValidation({ email, password, language })
         if (errors.length === 0) {
             const { data } = await supabase.from("profiles").select("*").eq("email", email).maybeSingle();
             if (data) {

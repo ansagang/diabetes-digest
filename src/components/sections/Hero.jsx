@@ -6,6 +6,7 @@ import useInView from "@/hooks/use-in-view"
 
 export default function Hero({ language }) {
     const {ref, inView} = useInView({repeat: false})
+
     return (
         <section className="hero">
             <div className="container">

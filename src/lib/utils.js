@@ -9,3 +9,7 @@ export function slugify(str) {
 export function unslugify(str) {
     return str.replace(/-/g, " ")
 }
+
+export function isDev() {
+    return process.env && process.env.NODE_ENV === "development"
+}

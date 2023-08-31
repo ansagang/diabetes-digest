@@ -21,24 +21,24 @@ export default function LoginForm({ language }) {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [isPending, startTransition] = useTransition()
+    const [loading, setLoading] = useState(false)
 
     const notification = responseHandler({ language })
     const router = useRouter()
 
     async function login({ email, password, provider }) {
-        // startTransition(async () => {
         try {
+            setLoading(true)
             const res = await auth.login({ email, password, supabase, provider, language })
             notification({ message: res.message, type: res.success ? 'success' : 'error' })
             if (res.success) {
-                router.refresh()
                 router.push('/')
             }
         } catch (err) {
             notification({ message: err.message, type: 'error' })
+        } finally{
+            setLoading(false)
         }
-        // })
     }
 
     return (
@@ -65,7 +65,7 @@ export default function LoginForm({ language }) {
                             <label>{language.app.labels.password}</label>
                             <InputPassword placeholder="123456789" value={password} onChange={((e) => setPassword(e.target.value))} />
                         </div>
-                        <Button form={true} type='primary' className='auth__button' disabled={isPending}>{language.app.buttons.login}</Button>
+                        <Button form={true} type='primary' className='auth__button' disabled={loading}>{language.app.buttons.login}</Button>
                         {/* <Link className="auth__reset link" href={'/reset-password'}>{language.app.labels.resetPassword}</Link> */}
                         <div className="auth__providers">
                             {

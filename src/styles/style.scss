@@ -147,10 +147,8 @@
                 color: $fg_color;
             }
         }
-        &-buttons{
-            & svg{
-                fill: $accent_color;
-            }
+        &-button{
+            margin-left: 30px;
         }
     }
     &__inner{

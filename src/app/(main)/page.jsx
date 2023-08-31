@@ -4,6 +4,7 @@ import { getLanguage } from "@/lib/get-language";
 import getSupabase from "@/db/supabase-server";
 import { cookies } from "next/headers";
 import Hero from "@/components/sections/hero";
+import { api } from "@/lib/api";
 
 export async function generateMetadata() {
 
@@ -22,13 +23,14 @@ export default async function Home() {
   const supabase = getSupabase(cookies)
   const user = await getUser({ supabase })
   const language = await getLanguage({ user: user.data })
+  const users = await api.getAllUsers({language: language, revalidate: 3600})
 
   console.log(user, language);
+  console.log(users);
 
   return (
     <>
       <Hero language={language} />
-      <h1>DIabetes</h1>
       <Login language={language} />
     </>
   )

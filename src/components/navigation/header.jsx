@@ -63,13 +63,13 @@ export default function Header({ language, user }) {
                     </nav> */}
                     <nav className="header__nav">
                         <ol className="header__nav-ol">
-                            <li className="header__nav-li">
+                            <li className="header__nav-button">
                                 <NavLink href={'/donation'}>
                                     {/* <Icons.heart /> */}
-                                    <Button type='primary'><Icons.heart width='17px' height='17px' fill="#FFFFFF" />{language.app.buttons.donate}</Button>
+                                    <Button type='primary'><Icons.heart width='17px' height='17px' />{language.app.buttons.donate}</Button>
                                 </NavLink>
                             </li>
-                            <li className="header__nav-buttons">
+                            <li className="header__nav-button">
                                 {
                                     user ?
                                         (

@@ -21,15 +21,16 @@ export default function RegisterForm({ language }) {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [fullname, setFullname] = useState('')
     const [lang, setLang] = useState(language.lang)
-    const [isPending, startTransition] = useTransition()
+    
+    const [loading, setLoading] = useState(false)
 
     const notification = responseHandler({ language })
     const router = useRouter()
 
-    async function register({ email, password, confirmPassword, fullname }) {
-        // startTransition(async () => {
+    async function register({ email, password, fullname }) {
         try {
-            const res = await auth.register({ email, password, confirmPassword, fullname, lang, supabase, language })
+            setLoading(true)
+            const res = await auth.register({ email, password, fullname, lang, supabase, language })
             notification({ message: res.message, type: res.success ? "success" : "error" })
             router.refresh()
             if (res.success) {
@@ -37,8 +38,9 @@ export default function RegisterForm({ language }) {
             }
         } catch (err) {
             notification({ message: res.message, type: "error" })
+        } finally {
+            setLoading(false)
         }
-        // })
     }
 
     return (
@@ -69,11 +71,7 @@ export default function RegisterForm({ language }) {
                             <label>{language.app.labels.password}</label>
                             <InputPassword placeholder="123456789" value={password} onChange={((e) => setPassword(e.target.value))} />
                         </div>
-                        <div className="auth__form-input">
-                            <label>{language.app.labels.confirmPassword}</label>
-                            <InputPassword placeholder="123456789" value={confirmPassword} onChange={((e) => setConfirmPassword(e.target.value))} />
-                        </div>
-                        <Button form={true} type='primary' className='auth__button' disabled={isPending}>{language.app.buttons.register}</Button>
+                        <Button form={true} type='primary' className='auth__button' disabled={loading}>{language.app.buttons.register}</Button>
                     </form>
                     <div className="auth__link">
                         <span>{language.app.labels.account}</span> <Link className="link" href={'/login'}>{language.app.buttons.login}</Link>

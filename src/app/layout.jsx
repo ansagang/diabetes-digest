@@ -3,7 +3,7 @@ import { Montserrat } from 'next/font/google'
 import { getLanguage } from '@/lib/get-language'
 import { getUser } from '@/lib/auth'
 import NotificationProvider from '@/context/notification-provider'
-import { cookies } from 'next/headers'
+import { cookies, headers } from 'next/headers'
 import getSupabase from '@/db/supabase-server'
 
 const font = Montserrat({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] })

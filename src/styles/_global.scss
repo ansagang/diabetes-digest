@@ -83,10 +83,11 @@ button {
 
         & svg{
             margin-right: 10px;
+            fill: $bg_color;
         }
 
         &:disabled{
-            filter: brightness(50%);
+            filter: brightness(80%);
         }
     }
 
@@ -98,6 +99,7 @@ button {
 
         & svg{
             margin-right: 10px;
+             fill: $accent_color;
         }
         // width: 100%;
     }

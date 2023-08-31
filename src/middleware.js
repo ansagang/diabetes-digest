@@ -29,9 +29,21 @@ export async function middleware(req) {
     }
   }
 
+  if (req.nextUrl.pathname.startsWith('/api')) {
+    const api_key = req.headers.get('x-api-key')
+    if (api_key !== process.env.API_KEY) {
+      return NextResponse.json({
+        success: false,
+        message: "Invalid api key"
+      })
+    } else {
+      return NextResponse.next()
+    }
+  }
+
   return res
 }
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api)(.*)"],
+  matcher: ["/((?!.*\\..*|_next).*)", "/"],
 }

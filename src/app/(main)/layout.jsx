@@ -16,9 +16,6 @@ export default async function MainLayout({ children }) {
             <Header language={language} user={user} />
             {children}
             <Footer language={language} user={user} />
-            <Header language={language} user={user} />
-            <Header language={language} user={user} />
-            <Header language={language} user={user} />
         </div>
     )
 }

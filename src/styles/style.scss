@@ -262,3 +262,42 @@
     }
 }
 
+.select{
+    position: relative;
+    width: 250px;
+    &__button{
+        width: 100%;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        & svg{
+            margin-left: 40px;
+        }
+    }
+    &__option{
+        padding: 15px;
+    }
+    &__options{
+        position: absolute;
+        opacity: 0;
+        padding: 10px;
+        background-color: #f0f0f0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: $button_radius;
+        // bottom: -150%;
+        // display: grid;
+        // grid-template-rows: 0fr;
+        // transition: grid-template-rows 0.5s ease-in-out;
+        transition: opacity 0.2s ease;
+        &.active{
+            // grid-template-rows: 1fr;
+            opacity: 1;
+        }
+        // &__inner{
+        //     overflow: hidden;
+        // }
+    }
+}

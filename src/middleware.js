@@ -2,6 +2,8 @@ import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
 import { getUser } from '@/lib/auth'
 import { routes } from '@/config/routes'
+// import { headers } from 'next/headers'
+
 
 export async function middleware(req) {
 
@@ -10,6 +12,30 @@ export async function middleware(req) {
   await supabase.auth.getSession()
 
   const { data: user } = await getUser({ supabase })
+
+
+
+  // if (req.nextUrl.pathname.startsWith('/')) {
+  //   const headerLanguage = req.headers.get("accept-language").split(",")[0].split("-")[0]
+  //   console.log(`/${headerLanguage}/${req.url.pathname}`);
+  //   if (user) {
+  //     if (user.lang) {
+  //       return NextResponse.redirect(
+  //         new URL(`/${user.lang}/${req.url.pathname}`, req.url)
+  //       )
+  //     } else {
+  //       await supabase.from("profiles").update({ lang: headerLanguage }).eq("email", user.email)
+  //       return NextResponse.redirect(
+  //         new URL(`/${headerLanguage}/${req.url.pathname}`, req.url)
+  //       )
+  //     }
+  //   } else {
+  //     console.log(`/${headerLanguage}/${req.url.pathname}`);
+  //     return NextResponse.redirect(
+  //       new URL(`/${headerLanguage}/${req.url.pathname}`, req.url)
+  //     )
+  //   }
+  // }
 
   for (let route of routes) {
     if (route.routes.includes(req.nextUrl.pathname)) {
@@ -45,5 +71,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/"],
+  matcher: ["/"],
 }

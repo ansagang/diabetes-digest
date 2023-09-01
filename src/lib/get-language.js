@@ -1,7 +1,5 @@
 import 'server-only'
 import { headers } from "next/headers"
-import { cookies } from 'next/headers'
-import { auth } from '@/lib/auth'
 
 const languages = {
   en: () => import('../config/lang/en.json').then((module) => module.default),
@@ -9,26 +7,22 @@ const languages = {
   kz: () => import('../config/lang/kz.json').then((module) => module.default)
 }
 
-export async function getLanguage({ locale, user }) {
+export async function getLanguage({ locale, user, supabase }) {
   const headersList = headers()
-  const cookiesList = cookies()
 
   async function languageGet() {
+    const headerLanguage = headersList.get("accept-language").split(",")[0].split("-")[0]
     if (locale) {
       return locale
     } else if (user) {
       if (user.lang) {
         return user.lang
       } else {
-        await auth.update({ email: user.email, data: { lang: headersList.get("accept-language").split(",")[0].split("-")[0] } })
-        return headersList.get("accept-language").split(",")[0].split("-")[0]
+        await supabase.from("profiles").update({lang: headerLanguage}).eq("email", user.email)
+        return headerLanguage
       }
     } else {
-      if (cookiesList.has('lang')) {
-        return cookiesList.get('lang')
-      } else {
-        return headersList.get("accept-language").split(",")[0].split("-")[0]
-      }
+      return headerLanguage
     }
   }
   const language = await languageGet()

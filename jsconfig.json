@@ -8,7 +8,7 @@
       "@/config/*": ["config/*"],
       "@/context/*": ["context/*"],
       "@/lib/*": ["lib/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
     }
   }
 }

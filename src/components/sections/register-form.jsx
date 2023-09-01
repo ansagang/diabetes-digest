@@ -21,7 +21,7 @@ export default function RegisterForm({ language }) {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [fullname, setFullname] = useState('')
     const [lang, setLang] = useState(language.lang)
-    
+
     const [loading, setLoading] = useState(false)
 
     const notification = responseHandler({ language })
@@ -32,12 +32,12 @@ export default function RegisterForm({ language }) {
             setLoading(true)
             const res = await auth.register({ email, password, fullname, lang, supabase, language })
             notification({ message: res.message, type: res.success ? "success" : "error" })
-            router.refresh()
             if (res.success) {
+                router.refresh()
                 router.push('/')
             }
         } catch (err) {
-            notification({ message: res.message, type: "error" })
+            notification({ message: err.message, type: "error" })
         } finally {
             setLoading(false)
         }

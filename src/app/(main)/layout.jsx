@@ -9,7 +9,7 @@ export default async function MainLayout({ children }) {
 
     const supabase = getSupabase(cookies)
     const { data: user } = await getUser({ supabase })
-    const language = await getLanguage({ user })
+    const language = await getLanguage({ user, supabase })
 
     return (
         <div className="wrapper__main">

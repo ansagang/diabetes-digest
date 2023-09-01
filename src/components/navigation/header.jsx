@@ -4,26 +4,28 @@ import { Icons } from "@/config/icons"
 import Image from "next/image"
 import Button from "@/components/ui/button"
 import NavLink from "@/components/ui/nav-link"
-import useScrollDirection from "@/hooks/use-scroll-direction"
-import { useState, useEffect } from "react"
+import { languages } from "@/config/languages"
+import Select from "@/components/ui/select"
+import { auth } from "@/lib/auth"
+import supabase from "@/db/supabase-client"
+import { useRouter } from "next/navigation"
+import { languageDecode } from "@/lib/utils"
 
 export default function Header({ language, user }) {
-    // const [sticky, setSticky] = useState(true)
+    const router = useRouter()
 
-    // useScrollDirection({
-    //     effect: ({ prevPos, currPos }) => {
-    //         const isShow = currPos.y > prevPos.y
-    //         if (isShow !== sticky) setSticky(isShow)
-    //     }
-    // })
+    async function updateLanguage(updatedLang) {
+        try {
+            const res = await auth.update({ email: user.email, data: { lang: updatedLang }, supabase: supabase, language: language })
+            if (res.success) {
+                router.refresh()
+            }
+        } catch (err) {
+            notification({ message: err.message, type: "error" })
+        }
+    }
 
-    // useEffect(() => {
-    //     if (window.scrollY === 0) {
-    //         setSticky(true)
-    //     }
-    // }, [sticky])
     return (
-        // <header className={sticky ? "header active" : "header"} >
         <header className='header active' >
             <div className="container">
                 <div className="header__inner">
@@ -32,9 +34,6 @@ export default function Header({ language, user }) {
                             <div className="header__nav-logo_img">
                                 <Image loading='lazy' height={1} width={1} unoptimized={true} title={'logo'} src={'logo.png'} alt={'logo'} />
                             </div>
-                            {/* <div className="header__nav-logo_title">
-                                <h1>{language.app.meta.title}</h1>
-                            </div> */}
                             <ol className="header__nav-ol">
                                 <li className="header__nav-li">
                                     <NavLink exact={true} href={'/'}><span>{language.app.pages.main.meta.title}</span></NavLink>
@@ -48,21 +47,16 @@ export default function Header({ language, user }) {
                             </ol>
                         </div>
                     </nav>
-                    {/* <nav className="header__nav">
-                        <ol className="header__nav-ol">
-                            <li className="header__nav-li">
-                                <NavLink exact={true} href={'/'}><h4>{language.app.pages.main.meta.title}</h4></NavLink>
-                            </li>
-                            <li className="header__nav-li">
-                                <NavLink href={'/diabetes'}><h4>{language.app.pages.diabetes.meta.title}</h4></NavLink>
-                            </li>
-                            <li className="header__nav-li">
-                                <NavLink href={'/about'}><h4>{language.app.pages.about.meta.title}</h4></NavLink>
-                            </li>
-                        </ol>
-                    </nav> */}
                     <nav className="header__nav">
                         <ol className="header__nav-ol">
+                            <div className="header__nav-button">
+                                {
+                                    user ?
+                                        <Select activeOption={languageDecode(user.lang)} setActiveOption={updateLanguage} options={languages} />
+                                        :
+                                        null
+                                }
+                            </div>
                             <li className="header__nav-button">
                                 <NavLink href={'/donation'}>
                                     {/* <Icons.heart /> */}

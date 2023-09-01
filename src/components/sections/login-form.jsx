@@ -32,11 +32,12 @@ export default function LoginForm({ language }) {
             const res = await auth.login({ email, password, supabase, provider, language })
             notification({ message: res.message, type: res.success ? 'success' : 'error' })
             if (res.success) {
+                router.refresh()
                 router.push('/')
             }
         } catch (err) {
             notification({ message: err.message, type: 'error' })
-        } finally{
+        } finally {
             setLoading(false)
         }
     }

@@ -17,22 +17,22 @@ export async function middleware(req) {
 
   // if (req.nextUrl.pathname.startsWith('/')) {
   //   const headerLanguage = req.headers.get("accept-language").split(",")[0].split("-")[0]
-  //   console.log(`/${headerLanguage}/${req.url.pathname}`);
+  //   console.log(`/${headerLanguage}/${req.url.pathname || ''}`);
   //   if (user) {
   //     if (user.lang) {
   //       return NextResponse.redirect(
-  //         new URL(`/${user.lang}/${req.url.pathname}`, req.url)
+  //         new URL(`/${user.lang}/${req.url.pathname || ''}`, req.url)
   //       )
   //     } else {
   //       await supabase.from("profiles").update({ lang: headerLanguage }).eq("email", user.email)
   //       return NextResponse.redirect(
-  //         new URL(`/${headerLanguage}/${req.url.pathname}`, req.url)
+  //         new URL(`/${headerLanguage}/${req.url.pathname || ''}`, req.url)
   //       )
   //     }
   //   } else {
   //     console.log(`/${headerLanguage}/${req.url.pathname}`);
   //     return NextResponse.redirect(
-  //       new URL(`/${headerLanguage}/${req.url.pathname}`, req.url)
+  //       new URL(`/${headerLanguage}/${req.url.pathname || ''}`, req.url)
   //     )
   //   }
   // }

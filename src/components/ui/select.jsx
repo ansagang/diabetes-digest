@@ -1,13 +1,32 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useRef } from "react"
 import { Icons } from "@/config/icons"
 
 export default function Select({ setActiveOption, activeOption, options, text, ...props }) {
 
     const [active, setActive] = useState(false)
 
+    const ref = useRef()
+
+    function checkClick(e) {
+        if (ref.current.contains(e.target)) {
+
+        } else {
+            setActive(false)
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('click', (e) => {
+            checkClick(e)
+        })
+
+        return () => document.removeEventListener('click', checkClick)
+    })
+
     return (
-        <div className="select" {...props}>
-            <button onClick={() => setActive(!active)} className="select__button">{activeOption ? activeOption : text}<Icons.downArrow /></button>
+        <div ref={ref} className="select" {...props}>
+            <button onClick={() => setActive(!active)} className="select__button">{activeOption ? activeOption : text}<Icons.downArrow className={active ? 'active' : ''} /></button>
             <div className={active ? "select__options active" : "select__options"}>
                 {
                     options ?
@@ -15,8 +34,11 @@ export default function Select({ setActiveOption, activeOption, options, text, .
                             options.length > 0 ?
                                 (
                                     options.map((option) => (
-                                        <div onClick={() => setActiveOption(option.code)} className="select__option">
-                                            <div className="select__option-title">{option.title}</div>
+                                        <div onClick={() => {
+                                            setActiveOption(option.code)
+                                            setActive(false)
+                                        }} className="select__option">
+                                            <div className="select__option-title"><p>{option.title}</p></div>
                                         </div>
                                     ))
                                 )

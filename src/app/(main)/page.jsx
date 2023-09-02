@@ -4,6 +4,7 @@ import { getLanguage } from "@/lib/get-language";
 import getSupabase from "@/db/supabase-server";
 import { cookies } from "next/headers";
 import Hero from "@/components/sections/hero";
+import Suggestion from "@/components/sections/suggestion";
 import { api } from "@/lib/api";
 
 export async function generateMetadata() {
@@ -31,6 +32,7 @@ export default async function Home() {
   return (
     <>
       <Hero language={language} />
+      <Suggestion language={language} />
       <Login language={language} />
     </>
   )

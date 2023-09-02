@@ -9,7 +9,7 @@ export default function Select({ setActiveOption, activeOption, options, text, .
     const ref = useRef()
 
     function checkClick(e) {
-        if (ref.current.contains(e.target)) {
+        if (ref?.current?.contains(e.target)) {
 
         } else {
             setActive(false)

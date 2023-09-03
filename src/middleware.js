@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server'
 import { getUser } from '@/lib/auth'
 import { routes } from '@/config/routes'
 // import { headers } from 'next/headers'
+import { isDev } from '@/lib/utils'
+import { notFound } from 'next/navigation'
 
 
 export async function middleware(req) {
@@ -10,6 +12,7 @@ export async function middleware(req) {
   const res = NextResponse.next()
   const supabase = createMiddlewareClient({ req, res })
   await supabase.auth.getSession()
+  const dev = isDev()
 
   const { data: user } = await getUser({ supabase })
 
@@ -41,15 +44,11 @@ export async function middleware(req) {
     if (route.routes.includes(req.nextUrl.pathname)) {
       if (user) {
         if (user.role !== route.access) {
-          return NextResponse.redirect(
-            new URL(`/`, req.url)
-          )
+          return NextResponse.rewrite(new URL('/404', req.url))
         }
       } else {
         if (route.access) {
-          return NextResponse.redirect(
-            new URL('/', req.url)
-          )
+          return NextResponse.rewrite(new URL('/404', req.url))
         }
       }
     }
@@ -57,13 +56,15 @@ export async function middleware(req) {
 
   if (req.nextUrl.pathname.startsWith('/api')) {
     const api_key = req.headers.get('x-api-key')
-    if (api_key !== process.env.API_KEY) {
-      return NextResponse.json({
-        success: false,
-        message: "Invalid api key"
-      })
-    } else {
-      return NextResponse.next()
+    if (!dev) {
+      if (api_key !== process.env.API_KEY) {
+        return NextResponse.json({
+          success: false,
+          message: "Invalid api key"
+        })
+      } else {
+        return NextResponse.next()
+      }
     }
   }
 
@@ -71,5 +72,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/"],
+  matcher: ["/", `/((?!_next/static|_next/image|favicon.ico).*)`],
 }

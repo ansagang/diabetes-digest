@@ -10,15 +10,20 @@ import { auth } from "@/lib/auth"
 import supabase from "@/db/supabase-client"
 import { useRouter } from "next/navigation"
 import { languageDecode } from "@/lib/utils"
+import responseHandler from "@/lib/response-handler"
 
 export default function Header({ language, user }) {
     const router = useRouter()
 
+    const notification = responseHandler({language})
+
     async function updateLanguage(updatedLang) {
         try {
-            const res = await auth.update({ email: user.email, data: { lang: updatedLang }, supabase: supabase, language: language })
+            const res = await auth.update({ user: user, data: { lang: updatedLang }, supabase: supabase, language: language })
             if (res.success) {
                 router.refresh()
+            } else {
+                notification({ message: res.message, type: "error" })
             }
         } catch (err) {
             notification({ message: err.message, type: "error" })
@@ -32,7 +37,7 @@ export default function Header({ language, user }) {
                     <nav className="header__nav">
                         <div className="header__nav-logo">
                             <div className="header__nav-logo_img">
-                                <Image loading='lazy' height={1} width={1} unoptimized={true} title={'logo'} src={'logo.png'} alt={'logo'} />
+                                <Image loading='lazy' height={1} width={1} unoptimized={true} title={'logo'} src={'logo-clean.png'} alt={'logo'} />
                             </div>
                             <ol className="header__nav-ol">
                                 <li className="header__nav-li">
@@ -51,10 +56,10 @@ export default function Header({ language, user }) {
                         <ol className="header__nav-ol">
                             <div className="header__nav-button">
                                 {
-                                    user ?
-                                        <Select activeOption={languageDecode(user.lang)} setActiveOption={updateLanguage} options={languages} />
-                                        :
-                                        null
+                                    // user ?
+                                        <Select text={language.app.buttons.selectLanguage} activeOption={languageDecode(user?.lang)} setActiveOption={updateLanguage} options={languages} />
+                                        // :
+                                        // null
                                 }
                             </div>
                             <li className="header__nav-button">

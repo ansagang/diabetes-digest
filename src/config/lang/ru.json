@@ -1,0 +1,130 @@
+{
+    "lang": "ru",
+    "title": "Русский",
+    "res": {
+        "getResult": "Объекты были успешно доставлены",
+        "addResult": "Объект был успешно добавлен",
+        "updateResult": "Объект был успешно добавлен",
+        "deleteResult": "Обьект был успешно удален",
+        "usernameLengthError": "Никнейм должен быть не меньше 3 символов",
+        "passwordLengthError": "Пароль должен быть не меньше 6 символов",
+        "passwordMatchError": "Пароли не совпадают",
+        "missingFields": "Заполните все поля",
+        "emailValidError": "Неверная электронная почта",
+        "passwordUniqueError": "Пароль должен быть уникальным",
+        "emailExistsError": "Данная электронная почта уже существует",
+        "registrationResult": "Успешная регистрация",
+        "loginResult": "Успешный вход в аккаунт",
+        "passwordIncorrectError": "Неверный пароль",
+        "userNotFoundError": "Пользователь не найден",
+        "userResult": "Аккаунт был успешно доставлен",
+        "sessionNotFoundError": "Сессия не найдена",
+        "sessionRequiredError": "Сессия необходима",
+        "userDeleteResult": "Аккаунт был успешно удален",
+        "seesionDeleteResult": " Сессия была успешно удален",
+        "accountUpdateResult": "Аккаунт был успешно обновлен",
+        "accountRequired": "Для начала войдите в аккаунт",
+        "emailNotConfirmedError": "Электронная почта не подтвержена",
+        "success": "Успешно",
+        "error": "Ошибка",
+        "info": "Инфо",
+        "warning": "Внимание"
+    },
+    "app": {
+        "meta": {
+            "title": "Diabetes Digest",
+            "description": "",
+            "keywords": [
+                "Next.js",
+                "Diabetes Digest",
+                "Social media",
+                "Diabetes"
+            ]
+        },
+        "pages": {
+            "main": {
+                "meta": {
+                    "title": "Главная"
+                }
+            },
+            "diabetes": {
+                "meta": {
+                    "title": "Диабеты"
+                },
+                "pages": {
+                    "typeOne": {
+                        "meta": {
+                            "title": "Диабет тип 1"
+                        }
+                    },
+                    "typeTwo": {
+                        "meta": {
+                            "title": "Диабет тип 2"
+                        }
+                    },
+                    "gestational": {
+                        "meta": {
+                            "title": "Гестационный диабет"
+                        }
+                    }
+                }
+            },
+            "about": {
+                "meta": {
+                    "title": "О нас"
+                }
+            },
+            "account": {
+                "meta": {
+                    "title": "Аккаунт"
+                }
+            },
+            "login": {
+                "meta": {
+                    "title": "Войти"
+                }
+            },
+            "register": {
+                "meta": {
+                    "title": "Зарегистрироваться"
+                }
+            }
+        },
+        "buttons": {
+            "login": "Войти",
+            "donate": "Задонатить",
+            "register": "Зарегистрироваться",
+            "selectLanguage": "Выберите язык"
+        },
+        "sections": {
+            "hero": {
+                "title": "Diabetes Digest",
+                "info": "Мы улучшаем жизнь всех людей страдающих диабетом."
+            },
+            "login": {
+                "title": "С Возвращением!",
+                "info": "Пожалуйста введите ваши данные."
+            },
+            "register": {
+                "title": "Зарегистрироваться",
+                "info": ""
+            },
+            "suggestion": {
+                "title": "Я ищу информацию про:"
+            },
+            "tip": {
+                "title": "Совет дня"
+            }
+        },
+        "labels": {
+            "email": "Электронная почта",
+            "password": "Пароль",
+            "noaccount": "Нету аккаунта?",
+            "account": "Уже есть аккаунт?",
+            "resetPassword": "Восстановить пароль",
+            "confirmPassword": "Подтвердить пароль",
+            "fullname": "ФИО",
+            "username": "Имя пользователя"
+        }
+    }
+}

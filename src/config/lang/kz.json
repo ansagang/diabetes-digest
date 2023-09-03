@@ -1,0 +1,46 @@
+{
+    "lang": "kz",
+    "title": "Kazakh",
+    "res": {
+        "getResult": "",
+        "addResult": "Object has been added successfully",
+        "updateResult": "Object has been updated successfully",
+        "deleteResult": "Object has been deleted successfully",
+        "usernameLengthError": "Username must be at least 3 characters",
+        "passwordLengthError": "Password must be at least 6 characters",
+        "passwordMatchError": "Passwords do not match",
+        "missingFields": "Missing fields",
+        "emailValidError": "Email is not valid",
+        "passwordUniqueError": "Password must be unique",
+        "emailExistsError": "Email already exists",
+        "registrationResult": "Successful registration",
+        "loginResult": "Successful login",
+        "passwordIncorrectError": "Incorrect password",
+        "userNotFoundError": "User not found",
+        "userResult": "Account has been retrieved successfully",
+        "sessionNotFoundError": "Session not found",
+        "sessionRequiredError": "Session is required",
+        "userDeleteResult": "User has been deleted successfully",
+        "seesionDeleteResult": "Session has been deleted successfully",
+        "accountUpdateResult": "Account has been updated successfully",
+        "accountRequired": "Account is required",
+        "emailNotConfirmedError": "Email is not confirmed",
+        "success": "Success",
+        "error": "Error",
+        "info": "Info",
+        "warning": "Warning"
+    },
+    "app": {
+        "meta": {
+            "title": "Diabetes Digest",
+            "description": "",
+            "keywords": [
+                "Next.js",
+                "Diabetes Digest",
+                "Social media",
+                "Diabetes"
+            ]
+        },
+        "pages": {}
+    }
+}

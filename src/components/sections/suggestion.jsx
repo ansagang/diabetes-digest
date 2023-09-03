@@ -35,8 +35,8 @@ export default function Suggestion({ language }) {
                                     links.length > 0 ?
                                         (
                                             links.map((link) => (
-                                                <Link href={link.href} className="suggestion-link link">
-                                                    <div className="suggestion-link_title">
+                                                <Link href={link.href} className="suggestion__link">
+                                                    <div className="suggestion__link-title">
                                                         <p>{link.title}</p>
                                                     </div>
                                                 </Link>

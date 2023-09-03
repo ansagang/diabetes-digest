@@ -107,10 +107,10 @@ export async function login({ email, password, supabase, provider, language }) {
     }
 }
 
-export async function update({ email, data, supabase, language }) {
+export async function update({ user, data, supabase, language }) {
     try {
-        if (email) {
-            const { error } = await supabase.from("profiles").update(data).eq("email", email)
+        if (user) {
+            const { error } = await supabase.from("profiles").update(data).eq("email", user.email)
             if (!error) {
                 return {
                     success: true,
@@ -123,7 +123,7 @@ export async function update({ email, data, supabase, language }) {
         } else {
             return {
                 success: false,
-                message: language.res.missingFields
+                message: language.res.accountRequired
             }
         }
     } catch (err) {

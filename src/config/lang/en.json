@@ -1,0 +1,130 @@
+{
+    "lang": "en",
+    "title": "English",
+    "res": {
+        "getResult": "Objects have been retrieved successfully",
+        "addResult": "Object has been added successfully",
+        "updateResult": "Object has been updated successfully",
+        "deleteResult": "Object has been deleted successfully",
+        "usernameLengthError": "Username must be at least 3 characters",
+        "passwordLengthError": "Password must be at least 6 characters",
+        "passwordMatchError": "Passwords do not match",
+        "missingFields": "Missing fields",
+        "emailValidError": "Email is not valid",
+        "passwordUniqueError": "Password must be unique",
+        "emailExistsError": "Email already exists",
+        "registrationResult": "Successful registration",
+        "loginResult": "Successful login",
+        "passwordIncorrectError": "Incorrect password",
+        "userNotFoundError": "User not found",
+        "userResult": "Account has been retrieved successfully",
+        "sessionNotFoundError": "Session not found",
+        "sessionRequiredError": "Session is required",
+        "userDeleteResult": "User has been deleted successfully",
+        "seesionDeleteResult": "Session has been deleted successfully",
+        "accountUpdateResult": "Account has been updated successfully",
+        "accountRequired": "Account is required",
+        "emailNotConfirmedError": "Email is not confirmed",
+        "success": "Success",
+        "error": "Error",
+        "info": "Info",
+        "warning": "Warning"
+    },
+    "app": {
+        "meta": {
+            "title": "Diabetes Digest",
+            "description": "",
+            "keywords": [
+                "Next.js",
+                "Diabetes Digest",
+                "Social media",
+                "Diabetes"
+            ]
+        },
+        "pages": {
+            "main": {
+                "meta": {
+                    "title": "Main"
+                }
+            },
+            "diabetes": {
+                "meta": {
+                    "title": "Diabetes"
+                },
+                "pages": {
+                    "typeOne": {
+                        "meta": {
+                            "title": "Type 1 Diabetes"
+                        }
+                    },
+                    "typeTwo": {
+                        "meta": {
+                            "title": "Type 2 Diabetes"
+                        }
+                    },
+                    "gestational": {
+                        "meta": {
+                            "title": "Gestational Diabetes"
+                        }
+                    }
+                }
+            },
+            "about": {
+                "meta": {
+                    "title": "About"
+                }
+            },
+            "account": {
+                "meta": {
+                    "title": "Account"
+                }
+            },
+            "login": {
+                "meta": {
+                    "title": "Login"
+                }
+            },
+            "register": {
+                "meta": {
+                    "title": "Register"
+                }
+            }
+        },
+        "buttons": {
+            "login": "Login",
+            "donate": "Donate",
+            "register": "Register",
+            "selectLanguage": "Select language"
+        },
+        "sections": {
+            "hero": {
+                "title": "Diabetes Digest",
+                "info": "We improve the lives of all people affected by diabetes."
+            },
+            "login": {
+                "title": "Welcome back!",
+                "info": "Please enter your details."
+            },
+            "register": {
+                "title": "Register",
+                "info": ""
+            },
+            "suggestion": {
+                "title": "I'm looking for information about:"
+            },
+            "tip": {
+                "title": "Tip of the day"
+            }
+        },
+        "labels": {
+            "email": "Email",
+            "password": "Password",
+            "noaccount": "Don't have an account?",
+            "account": "Already have an account?",
+            "resetPassword": "Reset password",
+            "confirmPassword": "Confirm Password",
+            "fullname": "Fullname",
+            "username": "Username"
+        }
+    }
+}

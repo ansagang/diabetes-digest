@@ -291,7 +291,7 @@
 
 .select{
     position: relative;
-    width: 200px;
+    // width: 200px;
     &__button{
         width: 100%;
         background-color: $bg_color;
@@ -352,10 +352,43 @@
     &__links{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        width: 60%;
+        justify-content: space-around;
+        width: 65%;
+    }
+    &__link{
+        border: 1px solid $secondary_color_2;
+        
+        color: $primary_color;
+        font-weight: $light_font_weight;
+        border-radius: 20px;
+        padding: 5px 17px;
+        transition: 0.1s ease;
+        &:hover{
+            border: 1px solid $accent_color;
+            color: $bg_color !important;
+            background-color: $accent_color;
+        }
     }
     &__title{
         margin-bottom: 0;
+    }
+}
+
+.tip{
+    &__card{
+        background-color: $accent_color;
+        padding: 80px;
+        text-align: center;
+        border-radius: 20px;
+        &-title{
+            &.title{
+                color: $bg_color;
+            }
+        }
+        &-description{
+            &.info{
+                color: $bg_color;
+            }
+        }
     }
 }

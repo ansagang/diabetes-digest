@@ -194,6 +194,11 @@
     }
     &__title{
         transition: 0.3s ease color;
+        & h1{
+            font-size: max(48px,min(5vw,76px));
+            background: linear-gradient(180deg, #7e7e7e, $fg_color);
+            background-clip: text;
+        }
         &.active{
             color: transparent;
         }

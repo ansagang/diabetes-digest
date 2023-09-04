@@ -19,9 +19,7 @@
     letter-spacing: -0.05em;
 
     & h1 {
-        font-size: max(48px,min(5vw,76px));
-        background: linear-gradient(180deg, #7e7e7e, $fg_color);
-        background-clip: text;
+        font-size: $h1_font_size;
         // -webkit-text-fill-color: transparent;
         // color: transparent;
         font-weight: $bolder_font_weight;

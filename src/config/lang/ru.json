@@ -55,6 +55,18 @@
                     "typeOne": {
                         "meta": {
                             "title": "Диабет тип 1"
+                        },
+                        "pages": {
+                            "symptomsCauses": {
+                                "meta": {
+                                    "title": "Симптомы & причины"
+                                }
+                            },
+                            "diagnosisTreatment": {
+                                "meta": {
+                                    "title": "Диагноз и уход"
+                                }
+                            }
                         }
                     },
                     "typeTwo": {

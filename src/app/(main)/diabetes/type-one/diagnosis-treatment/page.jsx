@@ -15,7 +15,7 @@ export async function generateMetadata() {
     }
 }
 
-export default async function TypeOne() {
+export default async function TypeOneDt() {
 
 
     const supabase = getSupabase(cookies)
@@ -24,7 +24,7 @@ export default async function TypeOne() {
 
     return (
         <>
-            <h1>awfafw</h1>
+            <h1>a</h1>
         </>
     )
 }

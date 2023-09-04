@@ -37,7 +37,7 @@ export default function Header({ language, user }) {
                     <nav className="header__nav">
                         <div className="header__nav-logo">
                             <div className="header__nav-logo_img">
-                                <Image loading='lazy' height={1} width={1} unoptimized={true} title={'logo'} src={'logo-clean.png'} alt={'logo'} />
+                                <Image loading='lazy' height={1} width={1} unoptimized={true} title={'logo'} src={'/logo-clean.png'} alt={'logo'} />
                             </div>
                             <ol className="header__nav-ol">
                                 <li className="header__nav-li">

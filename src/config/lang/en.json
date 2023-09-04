@@ -55,6 +55,18 @@
                     "typeOne": {
                         "meta": {
                             "title": "Type 1 Diabetes"
+                        },
+                        "pages": {
+                            "symptomsCauses": {
+                                "meta": {
+                                    "title": "Symptoms & causes"
+                                }
+                            },
+                            "diagnosisTreatment": {
+                                "meta": {
+                                    "title": "Diagnosis & treatment"
+                                }
+                            }
                         }
                     },
                     "typeTwo": {

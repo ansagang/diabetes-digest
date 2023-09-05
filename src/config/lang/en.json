@@ -72,11 +72,35 @@
                     "typeTwo": {
                         "meta": {
                             "title": "Type 2 Diabetes"
+                        },
+                        "pages": {
+                            "symptomsCauses": {
+                                "meta": {
+                                    "title": "Symptoms & causes"
+                                }
+                            },
+                            "diagnosisTreatment": {
+                                "meta": {
+                                    "title": "Diagnosis & treatment"
+                                }
+                            }
                         }
                     },
                     "gestational": {
                         "meta": {
                             "title": "Gestational Diabetes"
+                        },
+                        "pages": {
+                            "symptomsCauses": {
+                                "meta": {
+                                    "title": "Symptoms & causes"
+                                }
+                            },
+                            "diagnosisTreatment": {
+                                "meta": {
+                                    "title": "Diagnosis & treatment"
+                                }
+                            }
                         }
                     }
                 }

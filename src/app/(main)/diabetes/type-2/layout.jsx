@@ -12,20 +12,20 @@ export default async function DiabetesLayout({ children }) {
 
     const routes = [
         {
-            title: language.app.pages.diabetes.pages.typeOne.pages.symptomsCauses.meta.title,
-            url: '/diabetes/type-one/',
+            title: language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.meta.title,
+            url: '/diabetes/type-2',
             exact: true
         },
         {
-            title: language.app.pages.diabetes.pages.typeOne.pages.diagnosisTreatment.meta.title,
-            url: '/diabetes/type-one/diagnosis-treatment',
+            title: language.app.pages.diabetes.pages.typeTwo.pages.diagnosisTreatment.meta.title,
+            url: '/diabetes/type-2/diagnosis-treatment',
             exact: false
         }
     ]
 
     return (
         <div className="wrapper__diabetes">
-            <DiabetesHeader routes={routes} language={language} title={language.app.pages.diabetes.pages.typeOne.meta.title} />
+            <DiabetesHeader routes={routes} language={language} title={language.app.pages.diabetes.pages.typeTwo.meta.title} />
             {children}
         </div>
     )

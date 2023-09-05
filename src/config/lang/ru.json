@@ -72,11 +72,35 @@
                     "typeTwo": {
                         "meta": {
                             "title": "Диабет тип 2"
+                        },
+                        "pages": {
+                            "symptomsCauses": {
+                                "meta": {
+                                    "title": "Симптомы & причины"
+                                }
+                            },
+                            "diagnosisTreatment": {
+                                "meta": {
+                                    "title": "Диагноз и уход"
+                                }
+                            }
                         }
                     },
                     "gestational": {
                         "meta": {
                             "title": "Гестационный диабет"
+                        },
+                        "pages": {
+                            "symptomsCauses": {
+                                "meta": {
+                                    "title": "Симптомы & причины"
+                                }
+                            },
+                            "diagnosisTreatment": {
+                                "meta": {
+                                    "title": "Диагноз и уход"
+                                }
+                            }
                         }
                     }
                 }

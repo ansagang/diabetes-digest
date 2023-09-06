@@ -16,11 +16,11 @@ export default async function DiabetesLayout({ children }) {
             url: '/diabetes/type-1',
             exact: true
         },
-        {
-            title: language.app.pages.diabetes.pages.typeOne.pages.diagnosisTreatment.meta.title,
-            url: '/diabetes/type-1/diagnosis-treatment',
-            exact: false
-        }
+        // {
+        //     title: language.app.pages.diabetes.pages.typeOne.pages.diagnosisTreatment.meta.title,
+        //     url: '/diabetes/type-1/diagnosis-treatment',
+        //     exact: false
+        // }
     ]
 
     return (

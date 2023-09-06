@@ -1,4 +1,6 @@
 @import 'vars';
+@import url('https://fonts.googleapis.com/css2?family=Poltawski+Nowy:wght@400;500;600&display=swap');
+
 
 .container {
     margin: $mb_auto;
@@ -11,6 +13,10 @@
         padding: 0 20px;
         max-width: 1530px;
     }
+}
+
+body{
+    font-family: 'Poltawski Nowy', serif;
 }
 
 .title {

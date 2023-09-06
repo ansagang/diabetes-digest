@@ -35,7 +35,7 @@ export default async function Home() {
   return (
     <>
       <Hero language={language} />
-      {/* <Suggestion language={language} /> */}
+      <Suggestion language={language} />
       <Tip language={language} tip={tip} />
       {/* <Login language={language} /> */}
     </>

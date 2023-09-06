@@ -399,7 +399,8 @@
 }
 
 .diabetes-header{
-    background-color: $accent_color;
+    // background-color: $accent_color;
+    background: radial-gradient(79.75% 134.25% at 95.71% 100%,#d60000 0,$accent_color 100%);
     &__inner{
         // padding: 100px 130px;
     }
@@ -442,4 +443,44 @@
     //     width: 100%;
     //     background-color: $secondary_color_2;
     // }
+}
+
+.information-block{
+    margin-bottom: 40px;
+    &__title{
+        margin-bottom: 30px;
+    }
+    &__content{
+        &-info{
+            margin-bottom: 30px;
+            &.info{
+                // font-size: 20px;
+            }
+        }
+    }
+    &__list{
+        margin-top: 30px;
+        &-info{
+            margin-bottom: 20px;
+            &.info{
+                // font-size: 20px;
+                position: relative;
+                padding-left: 20px;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 7px;
+                    // transform: translateY(-50%);
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background-color: $primary_color;
+                }
+                & strong{
+                    color: $primary_color;
+                }
+            }
+        }
+    }
 }

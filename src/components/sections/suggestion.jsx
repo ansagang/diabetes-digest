@@ -9,11 +9,11 @@ export default function Suggestion({ language }) {
         },
         {
             title: language.app.pages.diabetes.pages.typeOne.meta.title,
-            href: '/diabetes/type-one'
+            href: '/diabetes/type-1'
         },
         {
             title: language.app.pages.diabetes.pages.typeTwo.meta.title,
-            href: '/diabetes/type-two'
+            href: '/diabetes/type-2'
         },
         {
             title: language.app.pages.diabetes.pages.gestational.meta.title,

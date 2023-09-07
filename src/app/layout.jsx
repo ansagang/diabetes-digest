@@ -5,8 +5,9 @@ import { getUser } from '@/lib/auth'
 import NotificationProvider from '@/context/notification-provider'
 import { cookies, headers } from 'next/headers'
 import getSupabase from '@/db/supabase-server'
+import LoadingProvider from '@/context/loading-provider'
 
-const font = Montserrat({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] })
+const font = Montserrat({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'] })
 export const revalidate = 0;
 
 export async function generateMetadata() {
@@ -63,9 +64,11 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <NotificationProvider>
-          {children}
-        </NotificationProvider>
+        <LoadingProvider>
+          <NotificationProvider>
+            {children}
+          </NotificationProvider>
+        </LoadingProvider>
       </body>
     </html>
   )

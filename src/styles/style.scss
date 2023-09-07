@@ -194,6 +194,7 @@
     }
     &__title{
         transition: 0.3s ease color;
+        transition-delay: 0.5s;
         & h1{
             font-size: max(48px,min(5vw,76px));
             background: linear-gradient(180deg, #7e7e7e, $fg_color);
@@ -288,8 +289,11 @@
         height: 100px;
         z-index: $z_fixed;
         border-radius: 50%;
+        backdrop-filter: saturate(180%) blur(5px);
         & img{
-            filter:drop-shadow(0px 0px 15px $bg_color);
+            // filter:blur(5px) saturate(180%);
+            // backdrop-filter: saturate(180%) blur(5px);
+            // background: rgba(255, 255, 255, 0.8);
         }
     }
 }
@@ -454,7 +458,7 @@
         &-info{
             margin-bottom: 30px;
             &.info{
-                // font-size: 20px;
+                font-size: 20px;
             }
         }
     }
@@ -463,7 +467,7 @@
         &-info{
             margin-bottom: 20px;
             &.info{
-                // font-size: 20px;
+                font-size: 18px;
                 position: relative;
                 padding-left: 20px;
                 &::before{
@@ -482,5 +486,54 @@
                 }
             }
         }
+    }
+}
+
+.footer{
+    background-color: $accent_color;
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        padding: 60px 0;
+    }
+    &__logo{
+        // width: 20%;
+        &-img{
+            & img{
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+    &__nav{
+        width: 100%;
+        display: flex;
+        // align-items: center;
+        justify-content: space-evenly;
+        &-ol{
+            display: flex;
+            flex-direction: column;
+            &_title{
+                text-transform:uppercase;
+                letter-spacing: 1.3px;
+                color: $accent_color_2;
+                margin-bottom: 20px;
+            }
+        }
+        &-li{
+            margin-bottom: 15px;
+            & .link{
+                color: $bg_color;
+            }
+        }
+    }
+}
+
+#nprogress{
+    & .bar{
+        background: $accent_color !important;
+    }
+    & .peg{
+        box-shadow: 0 0 10px $accent_color, 0 0 5px $accent_color !important;
     }
 }

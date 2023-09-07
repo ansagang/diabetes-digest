@@ -16,11 +16,11 @@ export default async function DiabetesLayout({ children }) {
             url: '/diabetes/gestational',
             exact: true
         },
-        {
-            title: language.app.pages.diabetes.pages.gestational.pages.diagnosisTreatment.meta.title,
-            url: '/diabetes/gestational/diagnosis-treatment',
-            exact: false
-        }
+        // {
+        //     title: language.app.pages.diabetes.pages.gestational.pages.diagnosisTreatment.meta.title,
+        //     url: '/diabetes/gestational/diagnosis-treatment',
+        //     exact: false
+        // }
     ]
 
     return (

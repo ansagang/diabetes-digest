@@ -83,6 +83,11 @@
                                 "meta": {
                                     "title": "Diagnosis & treatment"
                                 }
+                            },
+                            "riskTest": {
+                                "meta": {
+                                    "title": "Risk Test"
+                                }
                             }
                         }
                     },
@@ -124,6 +129,11 @@
                 "meta": {
                     "title": "Register"
                 }
+            },
+            "donation": {
+                "meta": {
+                    "title": "Donation"
+                }
             }
         },
         "buttons": {
@@ -143,7 +153,7 @@
             },
             "register": {
                 "title": "Register",
-                "info": ""
+                "info": "Please enter your details."
             },
             "suggestion": {
                 "title": "I'm looking for information about:"
@@ -455,6 +465,100 @@
                         "Ask your provider if you might be eligible for one of these clinical trials. It is important to carefully weigh the risks and benefits of any treatment available in a trial."
                     ]
                 }
+            },
+            "gestational": {
+                "overview": {
+                    "title": "Overview",
+                    "information": [
+                        "Gestational diabetes is diabetes diagnosed for the first time during pregnancy (gestation). Like other types of diabetes, gestational diabetes affects how your cells use sugar (glucose). Gestational diabetes causes high blood sugar that can affect your pregnancy and your baby's health.",
+                        "While any pregnancy complication is concerning, there's good news. During pregnancy you can help control gestational diabetes by eating healthy foods, exercising and, if necessary, taking medication. Controlling blood sugar can keep you and your baby healthy and prevent a difficult delivery.",
+                        "If you have gestational diabetes during pregnancy, generally your blood sugar returns to its usual level soon after delivery. But if you've had gestational diabetes, you have a higher risk of getting type 2 diabetes. You'll need to be tested for changes in blood sugar more often."
+                    ]
+                },
+                "symptoms": {
+                    "title": "Symptoms",
+                    "information": [
+                        "Most of the time, gestational diabetes doesn't cause noticeable signs or symptoms. Increased thirst and more-frequent urination are possible symptoms."
+                    ]
+                },
+                "causes": {
+                    "title": "Causes",
+                    "information": [
+                        "Researchers don't yet know why some women get gestational diabetes and others don't. Excess weight before pregnancy often plays a role.",
+                        "Usually, various hormones work to keep blood sugar levels in check. But during pregnancy, hormone levels change, making it harder for the body to process blood sugar efficiently. This makes blood sugar rise."
+                    ]
+                },
+                "riskFactors": {
+                    "title": "Risk Factors",
+                    "information": [
+                        "Risk factors for gestational diabetes include:"
+                    ],
+                    "list": [
+                        {
+                            "info": "Being overweight or obese"
+                        },
+                        {
+                            "info": "Not being physically active"
+                        },
+                        {
+                            "info": "Having prediabetes"
+                        },
+                        {
+                            "info": "Having had gestational diabetes during a previous pregnancy"
+                        },
+                        {
+                            "info": "Having polycystic ovary syndrome"
+                        },
+                        {
+                            "info": "Having an immediate family member with diabetes"
+                        },
+                        {
+                            "info": "Having previously delivered a baby weighing more than 9 pounds (4.1 kilograms)"
+                        },
+                        {
+                            "info": "Being of a certain race or ethnicity, such as Black, Hispanic, American Indian and Asian American"
+                        }
+                    ]
+                },
+                "complications": {
+                    "title": "Complications",
+                    "information": [
+                        "Gestational diabetes that's not carefully managed can lead to high blood sugar levels. High blood sugar can cause problems for you and your baby, including an increased likelihood of needing a surgery to deliver (C-section)."
+                    ],
+                    "list": [
+                        {
+                            "main": "Excessive birth weight.",
+                            "info": "If your blood sugar level is higher than the standard range, it can cause your baby to grow too large. Very large babies — those who weigh 9 pounds or more — are more likely to become wedged in the birth canal, have birth injuries or need a C-section birth."
+                        },
+                        {
+                            "main": "Early (preterm) birth.",
+                            "info": "High blood sugar may increase the risk of early labor and delivery before the due date. Or early delivery may be recommended because the baby is large."
+                        },
+                        {
+                            "main": "Serious breathing difficulties.",
+                            "info": "Babies born early may experience respiratory distress syndrome — a condition that makes breathing difficult."
+                        },
+                        {
+                            "main": "Low blood sugar (hypoglycemia).",
+                            "info": "Sometimes babies have low blood sugar (hypoglycemia) shortly after birth. Severe episodes of hypoglycemia may cause seizures in the baby. Prompt feedings and sometimes an intravenous glucose solution can return the baby's blood sugar level to normal."
+                        },
+                        {
+                            "main": "Obesity and type 2 diabetes later in life.",
+                            "info": "Babies have a higher risk of developing obesity and type 2 diabetes later in life."
+                        },
+                        {
+                            "main": "Stillbirth.",
+                            "info": "Untreated gestational diabetes can result in a baby's death either before or shortly after birth."
+                        }
+                    ]
+                },
+                "prevention": {
+                    "title": "Prevention",
+                    "information": [
+                        "There's no known way to prevent type 1 diabetes. But researchers are working on preventing the disease or further damage of the islet cells in people who are newly diagnosed.",
+                        "Ask your provider if you might be eligible for one of these clinical trials. It is important to carefully weigh the risks and benefits of any treatment available in a trial."
+                    ]
+                }
             }
         },
         "labels": {
@@ -465,7 +569,10 @@
             "resetPassword": "Reset password",
             "confirmPassword": "Confirm Password",
             "fullname": "Fullname",
-            "username": "Username"
+            "username": "Username",
+            "links": "Links",
+            "social": "Social",
+            "diabetes": "Diabetes"
         }
     }
 }

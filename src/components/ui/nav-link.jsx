@@ -5,10 +5,21 @@ import { usePathname } from 'next/navigation';
 
 export default function NavLink({ href, children, exact, className, ...props }) {
     const pathname = usePathname()
+    const regEx = /^http/ || /^tel/
     const state = exact ? (pathname === `${href}` ? `active ${className}` : `${className}`) : (pathname.startsWith(href) ? `active ${className}` : `${className}`)
     return (
-        <Link exact={exact} href={href} className={`link ${state}`} {...props}>
-            {children}
-        </Link>
+        regEx.test(href) ?
+            (
+                <a target='blank' href={href} className={`link ${state}`}>
+                    {children}
+                </a>
+            )
+            :
+            (
+
+                <Link exact={exact} href={href} className={`link ${state}`} {...props}>
+                    {children}
+                </Link>
+            )
     )
 }

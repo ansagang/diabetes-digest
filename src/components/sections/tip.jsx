@@ -5,7 +5,7 @@ export default function Tip({ tip, language }) {
             <div className="container">
                 <div className="tip__inner inner">
                     {/* <div className="tip__title title">
-                        <h2>{language.app.sections.tip.title}</h2>
+                        <h1>{language.app.sections.tip.title}</h1>
                     </div> */}
                     <div className="tip__card">
                         <div className="tip__card-title title">

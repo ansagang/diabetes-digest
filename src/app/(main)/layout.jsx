@@ -14,7 +14,9 @@ export default async function MainLayout({ children }) {
     return (
         <div className="wrapper__main">
             <Header language={language} user={user} />
-            {children}
+            <main>
+                {children}
+            </main>
             <Footer language={language} user={user} />
         </div>
     )

@@ -1,6 +1,9 @@
-export default function InformationBlock({ title, information, list }) {
+import Button from "@/components/ui/button";
+import Link from "next/link";
+
+export default function InformationBlock({ language, link, title, information, list, ...props }) {
     return (
-        <div className="information-block">
+        <div className="information-block" {...props}>
             <div className="information-block__title title">
                 <h1>{title}</h1>
             </div>
@@ -8,16 +11,23 @@ export default function InformationBlock({ title, information, list }) {
                 {
                     information ?
                         (
-                            information.length > 0 ?
+                            Array.isArray(information) ?
                                 (
-                                    information.map((item, key) => (
-                                        <div key={key} className="information-block__content-info info">
-                                            <p>{item}</p>
-                                        </div>
-                                    ))
+                                    information.length > 0 ?
+                                        (
+                                            information.map((item, key) => (
+                                                <div key={key} className="information-block__content-info info">
+                                                    <p>{item}</p>
+                                                </div>
+                                            ))
+                                        )
+                                        :
+                                        null
                                 )
                                 :
-                                null
+                                <div className="information-block__content-info info">
+                                    <p>{information}</p>
+                                </div>
                         )
                         :
                         null
@@ -42,6 +52,16 @@ export default function InformationBlock({ title, information, list }) {
                         null
                 }
             </div>
+            {
+                link ?
+                    (
+                        <Link href={link}>
+                            <Button type='primary'>{language.app.labels.readMore}</Button>
+                        </Link>
+                    )
+                    :
+                    null
+            }
         </div>
     )
 }

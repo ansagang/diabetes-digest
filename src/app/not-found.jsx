@@ -16,7 +16,7 @@ export default async function NotFound() {
                 <div className="not-found__inner inner">
                     <div className="not-found__content">
                         <div className="not-found__title title">
-                            <h1>{language.title}</h1>
+                            <h1>{language.app.pages.notFound.meta.title}</h1>
                         </div>
                     </div>
                 </div>

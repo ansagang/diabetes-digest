@@ -134,6 +134,11 @@
                 "meta": {
                     "title": "Donation"
                 }
+            },
+            "notFound": {
+                "meta": {
+                    "title": "Not Found"
+                }
             }
         },
         "buttons": {
@@ -559,6 +564,9 @@
                         "Ask your provider if you might be eligible for one of these clinical trials. It is important to carefully weigh the risks and benefits of any treatment available in a trial."
                     ]
                 }
+            },
+            "diabetesTypes": {
+                "title": "Diabetes Types"
             }
         },
         "labels": {
@@ -572,7 +580,8 @@
             "username": "Username",
             "links": "Links",
             "social": "Social",
-            "diabetes": "Diabetes"
+            "diabetes": "Diabetes",
+            "readMore": "Read more"
         }
     }
 }

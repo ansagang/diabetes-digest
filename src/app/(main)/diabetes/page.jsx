@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth"
 import { getLanguage } from "@/lib/get-language"
 import { cookies } from "next/headers"
 import DiabetesTypes from "@/components/sections/diabetes-types"
+import DiabetesHeader from "@/components/sections/diabetes-header"
 
 export async function generateMetadata() {
 
@@ -35,6 +36,9 @@ export default async function Diabetes() {
         //         </div>
         //     </div>
         // </section>
-        <DiabetesTypes language={language} />
+        <div className="wrapper__diabetes">
+            <DiabetesHeader language={language} title={language.app.pages.diabetes.meta.title} />
+            <DiabetesTypes language={language} />
+        </div>
     )
 }

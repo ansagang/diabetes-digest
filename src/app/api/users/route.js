@@ -2,6 +2,7 @@ import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server'
 import { getLanguage } from '@/lib/get-language';
+import supabaseErrors from '@/db/supabase-errors';
 
 export async function GET(request) {
     try {

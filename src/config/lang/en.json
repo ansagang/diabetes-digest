@@ -567,6 +567,16 @@
             },
             "diabetesTypes": {
                 "title": "Diabetes Types"
+            },
+            "about": {
+                "title": "About us",
+                "info": "Some information about our purpose and team."
+            },
+            "team": {
+                "title": "Our team"
+            },
+            "purpose": {
+                "title": "Our purpose"
             }
         },
         "labels": {

@@ -466,7 +466,7 @@
 }
 
 .information-block{
-    margin:40px 0;
+    margin-bottom: 70px;
     &__title{
         margin-bottom: 30px;
     }
@@ -558,5 +558,18 @@
     &__list{
         // display: flex;   
         justify-content: space-between;
+    }
+}
+
+.about{
+    &__content{
+        text-align: center;
+    }
+    &__title{
+        &.title{
+            & h1{
+                font-size: $big_font_size;
+            }
+        }
     }
 }

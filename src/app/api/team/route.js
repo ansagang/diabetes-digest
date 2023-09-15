@@ -10,7 +10,7 @@ export async function GET(request) {
         const requestUrl = new URL(request.url)
         const locale = requestUrl.searchParams.get('lang')
         const language = await getLanguage({ locale: locale })
-        const { data, error } = await supabase.from("tips").select().eq("lang", locale)
+        const { data, error } = await supabase.from("team").select().eq("lang", locale)
         if (!error) {
             return NextResponse.json({
                 success: true,

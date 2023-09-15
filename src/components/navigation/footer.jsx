@@ -5,7 +5,7 @@ import NavLink from "@/components/ui/nav-link"
 export default function Footer({ language }) {
     return (
         <footer className="footer">
-            <div className="container">
+            <div className="container__fluid">
                 <div className="footer__inner">
                     <div className="footer__logo">
                         <div className="footer__logo-img">

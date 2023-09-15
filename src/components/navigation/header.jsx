@@ -32,7 +32,7 @@ export default function Header({ language, user }) {
 
     return (
         <header className='header active' >
-            <div className="container">
+            <div className="container__fluid">
                 <div className="header__inner">
                     <nav className="header__nav">
                         <div className="header__nav-logo">

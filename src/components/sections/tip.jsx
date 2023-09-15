@@ -4,7 +4,7 @@ export default function Tip({ tip, language }) {
 
     return (
         <section className="tip">
-            <div className="container">
+            <div className="container__fluid">
                 <div className="tip__inner inner">
                     {/* <div className="tip__img">
                         <Image loading='lazy' height={1} width={1} unoptimized={true} title={'logo'} src={'tip-background.svg'} alt={'logo'} />

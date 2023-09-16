@@ -17,7 +17,6 @@
 
 .title {
     color: $primary_color;
-    margin-bottom: 15px;
     letter-spacing: -0.05em;
     // text-align: center;
 
@@ -25,17 +24,20 @@
         font-size: $h1_font_size;
         // -webkit-text-fill-color: transparent;
         // color: transparent;
+        margin-bottom: 15px;
         font-weight: $bolder_font_weight;
     }
 
     & h2 {
         font-size: $h2_font_size;
         font-weight: $bold_font_weight;
+        margin-bottom: 15px;
     }
 
     & h3 {
         font-size: $h3_font_size;
         font-weight: $medium_font_weight;
+        margin-bottom: 5px;
     }
 }
 

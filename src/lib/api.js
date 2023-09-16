@@ -2,7 +2,8 @@ export const api = {
     getAllUsers: (props) => getAllUsers(props),
     getTip: (props) => getTip(props),
     getTips: (props) => getTips(props),
-    getTeam: (props) => getTeam(props)
+    getTeam: (props) => getTeam(props),
+    getImage: (props) => getImage(props)
 }
 
 export async function getAllUsers({language, revalidate}) {
@@ -52,6 +53,21 @@ export async function getTip({language, revalidate, id}) {
 
 export async function getTeam({language, revalidate}) {
     const res = await fetch(`${process.env.URL}/api/team?lang=${language.lang}`, {
+        method: 'GET',
+        headers: {
+            'x-api-key': process.env.API_KEY
+        },
+        next: {
+            revalidate: revalidate
+        }
+    })
+    const data = await res.json()
+
+    return data
+}
+
+export async function getImage({language, revalidate, width, height, path, bucket}) {
+    const res = await fetch(`${process.env.URL}/api/images/${path}?width=${width}&height=${height}&lang=${language.lang}&bucket=${bucket}`, {
         method: 'GET',
         headers: {
             'x-api-key': process.env.API_KEY

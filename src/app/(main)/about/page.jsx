@@ -6,6 +6,7 @@ import { cookies } from "next/headers"
 import { api } from "@/lib/api"
 import Team from "@/components/sections/team"
 import Purpose from "@/components/sections/purpose"
+import { Suspense } from "react"
 
 export async function generateMetadata() {
 
@@ -14,7 +15,7 @@ export async function generateMetadata() {
     const language = await getLanguage({ user: user.data })
 
     return {
-        title: language.app.pages.diabetes.meta.title,
+        title: language.app.pages.about.meta.title,
 
     }
 }
@@ -25,12 +26,12 @@ export default async function AboutPage() {
     const user = await auth.getUser({ supabase })
     const language = await getLanguage({ user: user.data })
     const { data: team } = await api.getTeam({ language: language, revalidate: 0 })
+    const storageUrl = process.env.STORAGE
 
     return (
         <>
             <About language={language} />
-            <Purpose language={language} />
-            <Team language={language} team={team} />
+            <Team language={language} team={team} storageUrl={storageUrl} />
         </>
     )
 }

@@ -2,25 +2,28 @@ import { cookies } from "next/headers"
 import getSupabase from "@/db/supabase-server"
 import { auth } from "@/lib/auth"
 import { getLanguage } from "@/lib/get-language"
+import NotFound from "@/components/sections/not-found"
 
-export default async function NotFound() {
+export async function generateMetadata() {
 
     const supabase = getSupabase(cookies)
     const { data: user } = await auth.getUser({ supabase })
-  
     const language = await getLanguage({ user, supabase })
-  
+
+    return {
+        title: language.app.pages.notFound.meta.title,
+
+    }
+}
+
+export default async function NotFoundPage() {
+
+    const supabase = getSupabase(cookies)
+    const { data: user } = await auth.getUser({ supabase })
+
+    const language = await getLanguage({ user, supabase })
+
     return (
-        <section className="not-found">
-            <div className="container">
-                <div className="not-found__inner inner">
-                    <div className="not-found__content">
-                        <div className="not-found__title title">
-                            <h1>{language.app.pages.notFound.meta.title}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <NotFound language={language} />
     )
 }

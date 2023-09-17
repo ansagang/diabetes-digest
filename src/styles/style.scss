@@ -384,7 +384,9 @@
         }
     }
     &__title{
-        margin-bottom: 0;
+        & h2{
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -621,3 +623,25 @@
 //     background-size: 800px 104px;   
 //     position: relative;
 // }
+
+.not-found{
+    height: 100vh;
+    text-align: center;
+    &__inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__404{
+        & h1{
+            font-size: 200px;
+        }
+    }
+    &__title{
+        text-transform: uppercase;
+    }
+    &__content{
+        margin-bottom: 30px;
+    }
+}

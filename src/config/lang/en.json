@@ -145,7 +145,8 @@
             "login": "Login",
             "donate": "Donate",
             "register": "Register",
-            "selectLanguage": "Select language"
+            "selectLanguage": "Select language",
+            "goBack": "Go Back"
         },
         "sections": {
             "hero": {
@@ -577,6 +578,10 @@
             },
             "purpose": {
                 "title": "Our purpose"
+            },
+            "notFound": {
+                "title": "Page Not Found",
+                "info": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable"
             }
         },
         "labels": {

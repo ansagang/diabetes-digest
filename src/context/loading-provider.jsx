@@ -6,7 +6,7 @@ const LoadingProvider = ({ children }) => {
     return (
         <>
             {children}
-            <Next13ProgressBar height="5px" showOnShallow options={{showSpinner: false}} />
+            <Next13ProgressBar height="5px" showOnShallow options={{showSpinner: false}}  />
         </>
     );
 };

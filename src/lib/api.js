@@ -3,7 +3,9 @@ export const api = {
     getTip: (props) => getTip(props),
     getTips: (props) => getTips(props),
     getTeam: (props) => getTeam(props),
-    getImage: (props) => getImage(props)
+    getImage: (props) => getImage(props),
+    getEvent: (props) => getEvent(props),
+    getEvents: (props) => getEvents(props)
 }
 
 export async function getAllUsers({language, revalidate}) {
@@ -76,6 +78,38 @@ export async function getImage({language, revalidate, width, height, path, bucke
             revalidate: revalidate
         }
     })
+    const data = await res.json()
+
+    return data
+}
+
+export async function getEvents({language, sort, searchTerm, revalidate}) {
+    const res = await fetch(`${process.env.URL}/api/events?sort=${sort}&searchTerm=${searchTerm}&lang=${language.lang}`, {
+        method: 'GET',
+        headers: {
+            'x-api-key': process.env.API_KEY
+        },
+        next: {
+            revalidate: revalidate
+        }
+    })
+
+    const data = await res.json()
+
+    return data
+}
+
+export async function getEvent({language, id, revalidate}) {
+    const res = await fetch(`${process.env.URL}/api/events/${id}?lang=${language.lang}`, {
+        method: 'GET',
+        headers: {
+            'x-api-key': process.env.API_KEY
+        },
+        next: {
+            revalidate: revalidate
+        }
+    })
+
     const data = await res.json()
 
     return data

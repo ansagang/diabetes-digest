@@ -21,7 +21,7 @@ export default function Team({ language, team, storageUrl }) {
                                                 <>
                                                     <div className="team__member" key={key}>
                                                         <div className="team__member-img">
-                                                            <Image loading='lazy' height={1} width={1} unoptimized={true} title={'member'} src={`${storageUrl}/avatars/${member.image}?width=${50}&height=${50}`} alt={'logo'} />
+                                                            <Image blurDataURL={`${storageUrl}/avatars/${member.image}?width=${50}&height=${50}`} placeholder="blur" loading='lazy' height={1} width={1} unoptimized={true} title={'member'} src={`${storageUrl}/avatars/${member.image}?width=${50}&height=${50}`} alt={'logo'} />
                                                         </div>
                                                         <a href={member.social} target="_blank" className="team__member-information">
                                                             <div className="team__member-name title">

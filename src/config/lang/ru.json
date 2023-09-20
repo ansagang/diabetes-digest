@@ -118,7 +118,8 @@
             "account": {
                 "meta": {
                     "title": "Аккаунт"
-                }
+                },
+                "pages": {}
             },
             "login": {
                 "meta": {

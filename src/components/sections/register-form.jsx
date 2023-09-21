@@ -49,10 +49,10 @@ export default function RegisterForm({ language }) {
                 <div className="auth__inner inner__block">
                     <div className="auth__content">
                         <div className="auth__title title">
-                            <h2>{language.app.sections.register.title}</h2>
+                            <h2>{language.app.pages.register.sections.register.title}</h2>
                         </div>
                         <div className="auth__info info">
-                            <p>{language.app.sections.register.info}</p>
+                            <p>{language.app.pages.register.sections.register.info}</p>
                         </div>
                     </div>
                     <form className="auth__form" onSubmit={(e) => {

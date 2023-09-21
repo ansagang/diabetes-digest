@@ -48,10 +48,10 @@ export default function LoginForm({ language }) {
                 <div className="auth__inner inner__block">
                     <div className="auth__content">
                         <div className="auth__title title">
-                            <h2>{language.app.sections.login.title}</h2>
+                            <h2>{language.app.pages.login.sections.login.title}</h2>
                         </div>
                         <div className="auth__info info">
-                            <p>{language.app.sections.login.info}</p>
+                            <p>{language.app.pages.login.sections.login.info}</p>
                         </div>
                     </div>
                     <form id="form" className="auth__form" onSubmit={(e) => {

@@ -16,10 +16,10 @@ export default function NotFound({ language }) {
                             <h1>404</h1>
                         </div>
                         <div className="not-found__title title">
-                            <h2>{language.app.sections.notFound.title}</h2>
+                            <h2>{language.app.pages.notFound.sections.notFound.title}</h2>
                         </div>
                         <div className="not-found__info info">
-                            <p>{language.app.sections.notFound.info}</p>
+                            <p>{language.app.pages.notFound.sections.notFound.info}</p>
                         </div>
                     </div>
                     <Button onClick={() => router.back()} type={'primary'}>{language.app.buttons.goBack}</Button>

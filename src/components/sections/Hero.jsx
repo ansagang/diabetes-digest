@@ -13,10 +13,10 @@ export default function Hero({ language }) {
                 <div className="hero__inner inner__big">
                     <div className="hero__content" ref={ref}>
                         <div className={inView ? "hero__title title active" : "hero__title title"} >
-                            <h1>{language.app.sections.hero.title}</h1>
+                            <h1>{language.app.pages.main.sections.hero.title}</h1>
                         </div>
                         <div className="hero__info info">
-                            <p>{language.app.sections.hero.info}</p>
+                            <p>{language.app.pages.main.sections.hero.info}</p>
                         </div>
                         <Link className="hero__link" href={'/donation'}><Button type='primary'>{language.app.buttons.donate}</Button></Link>
                     </div>

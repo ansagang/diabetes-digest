@@ -392,6 +392,7 @@
 
 .tip{
     &__card{
+        margin-top: 40px;
         position: relative;
         background-color: $accent_color;
         padding: 80px;
@@ -652,6 +653,10 @@
     &__li{
         padding: 15px;
         border-radius: 7px;
+        & .link{
+            display: flex;
+            align-items: center;
+        }
         & svg{
             width: 23px;
             height: 23px;

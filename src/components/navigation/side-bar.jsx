@@ -13,7 +13,7 @@ export default function Sidebar({language, routes}) {
                                 (
                                     routes.map((route) => (
                                         <li className="sidebar__li">
-                                            <NavLink exact={route.exact} href={route.url}>{route.icon}<span>{route.title}</span></NavLink>
+                                            <NavLink exact={route.exact} href={route.url}>{route.icon}<p>{route.title}</p></NavLink>
                                         </li>
                                     ))
                                 )

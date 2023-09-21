@@ -27,12 +27,12 @@ export default async function TypeTwo() {
         <section className="type-two">
             <div className="container">
                 <div className="type-two__inner inner">
-                    <InformationBlock title={language.app.sections.typeTwo.overview.title} information={language.app.sections.typeTwo.overview.information} />
-                    <InformationBlock title={language.app.sections.typeTwo.symptoms.title} information={language.app.sections.typeTwo.symptoms.information} list={language.app.sections.typeTwo.symptoms.list} />
-                    <InformationBlock title={language.app.sections.typeTwo.causes.title} information={language.app.sections.typeTwo.causes.information} list={language.app.sections.typeTwo.causes.list} />
-                    <InformationBlock title={language.app.sections.typeTwo.riskFactors.title} information={language.app.sections.typeTwo.riskFactors.information} list={language.app.sections.typeTwo.riskFactors.list} />
-                    <InformationBlock title={language.app.sections.typeTwo.complications.title} information={language.app.sections.typeTwo.complications.information} list={language.app.sections.typeTwo.complications.list} />
-                    <InformationBlock title={language.app.sections.typeTwo.prevention.title} information={language.app.sections.typeTwo.prevention.information} list={language.app.sections.typeTwo.prevention.list} />
+                    <InformationBlock title={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.overview.title} information={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.overview.information} />
+                    <InformationBlock title={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.symptoms.title} information={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.symptoms.information} list={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.symptoms.list} />
+                    <InformationBlock title={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.causes.title} information={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.causes.information} list={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.causes.list} />
+                    <InformationBlock title={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.riskFactors.title} information={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.riskFactors.information} list={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.riskFactors.list} />
+                    <InformationBlock title={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.complications.title} information={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.complications.information} list={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.complications.list} />
+                    <InformationBlock title={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.prevention.title} information={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.prevention.information} list={language.app.pages.diabetes.pages.typeTwo.pages.symptomsCauses.sections.typeTwo.prevention.list} />
                 </div>
             </div>
         </section>

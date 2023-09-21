@@ -1,7 +1,6 @@
 "use client"
 
 import NavLink from "@/components/ui/nav-link"
-import { usePathname } from "next/navigation"
 
 export default function DiabetesHeader({ language, title, routes }) {
 

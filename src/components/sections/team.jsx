@@ -9,7 +9,7 @@ export default function Team({ language, team, storageUrl }) {
             <div className="container">
                 <div className="team__inner inner">
                     <div className="team__title title">
-                        <h1>{language.app.sections.team.title}</h1>
+                        <h1>{language.app.pages.about.sections.team.title}</h1>
                     </div>
                     <div className="team__list">
                         {

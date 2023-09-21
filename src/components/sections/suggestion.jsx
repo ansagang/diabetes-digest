@@ -26,7 +26,7 @@ export default function Suggestion({ language }) {
             <div className="container__fluid">
                 <div className="suggestion__inner inner__small">
                     <div className="suggestion__title title">
-                        <h2>{language.app.sections.suggestion.title}</h2>
+                        <h2>{language.app.pages.main.sections.suggestion.title}</h2>
                     </div>
                     <div className="suggestion__links">
                         {

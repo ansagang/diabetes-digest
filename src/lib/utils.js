@@ -25,3 +25,7 @@ export function languageDecode(lang) {
         }
     }
 }
+
+export function timestampDecode(timestamp) {
+    
+}

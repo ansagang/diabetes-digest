@@ -1,8 +1,11 @@
+import { cookies } from "next/headers"
+
 import { auth } from "@/lib/auth"
 import { getLanguage } from "@/lib/get-language"
+
 import getSupabase from "@/db/supabase-server"
-import { cookies } from "next/headers"
-import DiabetesHeader from "@/components/sections/diabetes-header"
+
+import DiabetesHeader from "@/components/sections/diabetes-header.diabetes"
 
 export default async function DiabetesLayout({ children }) {
 

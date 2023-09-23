@@ -555,6 +555,11 @@
             "account": {
                 "meta": {
                     "title": "Account"
+                },
+                "sections": {
+                    "details": {
+                        "title": "Details"
+                    }
                 }
             },
             "login": {
@@ -1051,7 +1056,40 @@
             "links": "Links",
             "social": "Social",
             "diabetes": "Diabetes",
-            "readMore": "Read more"
+            "readMore": "Read more",
+            "language": "Language"
+        },
+        "global": {
+            "days": {
+                "monday": {
+                    "full": "Monday",
+                    "short": "Mon"
+                },
+                "tuesday": {
+                    "full": "Tuesday",
+                    "short": "Tue"
+                },
+                "wednesday": {
+                    "full": "Wednesday",
+                    "short": "Wed"
+                },
+                "thursday": {
+                    "full": "Thursday",
+                    "short": "Thu"
+                },
+                "friday": {
+                    "full": "Friday",
+                    "short": "Fri"
+                },
+                "saturday": {
+                    "full": "Saturday",
+                    "short": "Sat"
+                },
+                "sunday": {
+                    "full": "Sunday",
+                    "short": "Sun"
+                }
+            }
         }
     }
 }

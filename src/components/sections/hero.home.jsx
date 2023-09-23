@@ -1,7 +1,9 @@
 "use client"
 
-import Button from "@/components/ui/button"
 import Link from "next/link"
+
+import Button from "@/components/ui/button"
+
 import useInView from "@/hooks/use-in-view"
 
 export default function Hero({ language }) {

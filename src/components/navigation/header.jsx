@@ -15,7 +15,7 @@ import responseHandler from "@/lib/response-handler"
 export default function Header({ language, user }) {
     const router = useRouter()
 
-    const notification = responseHandler({language})
+    const notification = responseHandler({ language })
 
     async function updateLanguage(updatedLang) {
         try {
@@ -39,7 +39,7 @@ export default function Header({ language, user }) {
                             <div className="header__nav-logo_img">
                                 <Image loading='lazy' height={1} width={1} unoptimized={true} title={'logo'} src={'/logo-clean.png'} alt={'logo'} />
                             </div>
-                            <ol className="header__nav-ol">
+                            <ol className="header__nav-ol links">
                                 <li className="header__nav-li">
                                     <NavLink exact={true} href={'/'}><span>{language.app.pages.main.meta.title}</span></NavLink>
                                 </li>
@@ -55,31 +55,25 @@ export default function Header({ language, user }) {
                     <nav className="header__nav">
                         <ol className="header__nav-ol">
                             <div className="header__nav-button">
-                                {
-                                    // user ?
-                                        <Select text={language.app.buttons.selectLanguage} activeOption={languageDecode(user?.lang)} setActiveOption={updateLanguage} options={languages} />
-                                        // :
-                                        // null
-                                }
+                                <Select text={language.app.buttons.selectLanguage} activeOption={languageDecode(user?.lang)} setActiveOption={updateLanguage} options={languages} />
                             </div>
-                            <li className="header__nav-button">
+                            {/* <li className="header__nav-button">
                                 <NavLink href={'/donation'}>
-                                    {/* <Icons.heart /> */}
-                                    <Button type='primary'><Icons.heart width='17px' height='17px' />{language.app.buttons.donate}</Button>
+                                    <Button type='secondary'><Icons.heart width='17px' height='17px' />{language.app.buttons.donate}</Button>
                                 </NavLink>
-                            </li>
+                            </li> */}
                             <li className="header__nav-button">
                                 {
                                     user ?
                                         (
                                             <NavLink href={'/account'}>
-                                                <Button type='secondary'><Icons.account width='17px' height='17px' />{language.app.pages.account.meta.title}</Button>
+                                                <Button type='primary'><Icons.account width='17px' height='17px' />{language.app.pages.account.meta.title}</Button>
                                             </NavLink>
                                         )
                                         :
                                         (
                                             <NavLink href={'/login'}>
-                                                <Button type='secondary'>{language.app.buttons.login}</Button>
+                                                <Button type='primary'>{language.app.buttons.login}</Button>
                                             </NavLink>
                                         )
                                 }

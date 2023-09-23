@@ -121,12 +121,12 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap:30px;
-    margin-top: 40px;
+    margin-top: 50px;
     &__mini{
         grid-template-columns: 1fr 1fr 1fr;
         display: grid;
         gap:30px;
-        margin-top: 40px;
+        margin-top: 50px;
     }
 }
 

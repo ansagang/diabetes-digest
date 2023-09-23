@@ -1,13 +1,15 @@
-import Login from "@/components/Login"
+import { cookies } from "next/headers";
+
 import { getUser } from "@/lib/auth";
 import { getLanguage } from "@/lib/get-language";
-import getSupabase from "@/db/supabase-server";
-import { cookies } from "next/headers";
-import Hero from "@/components/sections/hero";
-import Suggestion from "@/components/sections/suggestion";
 import { api } from "@/lib/api";
-import Tip from "@/components/sections/tip";
-import Events from "@/components/sections/events";
+
+import getSupabase from "@/db/supabase-server";
+
+import Hero from "@/components/sections/hero.home";
+import Suggestion from "@/components/sections/suggestion.home";
+import Tip from "@/components/sections/tip.home";
+// import Events from "@/components/sections/events";
 
 export async function generateMetadata() {
 
@@ -30,17 +32,12 @@ export default async function Home() {
   const { data: tip } = await api.getTip({ language: language, revalidate: 86400 })
   const { data: events } = await api.getEvents({ language: language, revalidate: 0, sort: 'asc' })
 
-  console.log(user, language);
-  console.log(users);
-  console.log(tip);
-
   return (
     <>
       <Hero language={language} />
       <Suggestion language={language} />
       <Tip language={language} tip={tip} />
-      {/* <Login language={language} /> */}
-      <Events language={language} events={events} />
+      {/* <Events language={language} events={events} /> */}
     </>
   )
 }

@@ -556,7 +556,11 @@
                 "meta": {
                     "title": "Аккаунт"
                 },
-                "pages": {}
+                "sections": {
+                    "details": {
+                        "title": "Details"
+                    }
+                }
             },
             "login": {
                 "meta": {
@@ -1052,7 +1056,40 @@
             "links": "Ссылки",
             "social": "Социальные сети",
             "diabetes": "Диабет",
-            "readMore": "Узнать больше"
+            "readMore": "Узнать больше",
+            "language": "Выберите язык"
+        },
+        "global": {
+            "days": {
+                "monday": {
+                    "full": "Понедельник",
+                    "short": "Пон"
+                },
+                "tuesday": {
+                    "full": "Вторник",
+                    "short": "Вт"
+                },
+                "wednesday": {
+                    "full": "Среда",
+                    "short": "Ср"
+                },
+                "thursday": {
+                    "full": "Четверг",
+                    "short": "Чт"
+                },
+                "friday": {
+                    "full": "Пятнциа",
+                    "short": "Пят"
+                },
+                "saturday": {
+                    "full": "Суббота",
+                    "short": "Суб"
+                },
+                "sunday": {
+                    "full": "Воскресенье",
+                    "short": "Воск"
+                }
+            }
         }
     }
 }

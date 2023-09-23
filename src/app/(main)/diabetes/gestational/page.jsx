@@ -1,7 +1,10 @@
+import { cookies } from "next/headers"
+
 import getSupabase from "@/db/supabase-server"
+
 import { auth } from "@/lib/auth"
 import { getLanguage } from "@/lib/get-language"
-import { cookies } from "next/headers"
+
 import InformationBlock from "@/components/ui/information-block"
 
 export async function generateMetadata() {

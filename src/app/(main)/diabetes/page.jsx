@@ -1,9 +1,12 @@
+import { cookies } from "next/headers"
+
 import getSupabase from "@/db/supabase-server"
+
 import { auth } from "@/lib/auth"
 import { getLanguage } from "@/lib/get-language"
-import { cookies } from "next/headers"
-import DiabetesTypes from "@/components/sections/diabetes-types"
-import DiabetesHeader from "@/components/sections/diabetes-header"
+
+import DiabetesTypes from "@/components/sections/diabetes-types.diabetes"
+import DiabetesHeader from "@/components/sections/diabetes-header.diabetes"
 
 export async function generateMetadata() {
 
@@ -17,7 +20,7 @@ export async function generateMetadata() {
     }
 }
 
-export default async function Diabetes() {
+export default async function DiabetesPage() {
 
 
     const supabase = getSupabase(cookies)
@@ -25,17 +28,6 @@ export default async function Diabetes() {
     const language = await getLanguage({ user: user.data })
 
     return (
-        // <section className="diabetes">
-        //     <div className="container">
-        //         <div className="diabetes__inner inner">
-        //             <div className="diabetes__content">
-        //                 <div className="diabetes__title title">
-        //                     <h1>{language.app.pages.diabetes.meta.title}</h1>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </section>
         <div className="wrapper__diabetes">
             <DiabetesHeader language={language} title={language.app.pages.diabetes.meta.title} />
             <DiabetesTypes language={language} />

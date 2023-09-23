@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useTransition } from "react"
+import { useState } from "react"
 
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -14,7 +14,7 @@ import supabase from "@/db/supabase-client"
 import { auth } from "@/lib/auth"
 import responseHandler from "@/lib/response-handler"
 
-export default function RegisterForm({ language }) {
+export default function Register({ language }) {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -65,7 +65,7 @@ export default function RegisterForm({ language }) {
                         </div>
                         <div className="auth__form-input">
                             <label>{language.app.labels.email}</label>
-                            <Input type='text' placeholder="ansagaang@gmail.com" value={email} onChange={((e) => setEmail(e.target.value))} />
+                            <Input type='text' placeholder="ansagang@gmail.com" value={email} onChange={((e) => setEmail(e.target.value))} />
                         </div>
                         <div className="auth__form-input">
                             <label>{language.app.labels.password}</label>

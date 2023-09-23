@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import NavLink from "@/components/ui/nav-link"
 
 export default function Footer({ language }) {

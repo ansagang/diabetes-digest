@@ -1,0 +1,50 @@
+@import 'vars';
+
+@media (max-width: $breakpoint_laptop) {
+    .container {
+        max-width: 1000px;
+    
+        &__fluid {
+            max-width: 1230px;
+        }
+    }
+
+    .header{
+        &__nav{
+            &-logo{
+                &_img{
+                    // margin-right: 0;
+
+                }
+            }
+            &-li{
+                margin: 0 20px;
+            }
+        }
+    }
+
+    .inner{
+        &__block{
+            padding: 80px 30px;
+        }
+    }
+}
+
+@media (max-width: $breakpoint_tablet) {
+    .auth{
+        width: 50%;
+    }
+    .background{
+        width: 50%;
+    }
+
+    .header{
+        &__nav{
+            &-ol{
+                &.links{
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,12 +1,13 @@
-import About from "@/components/sections/about"
+import { cookies } from "next/headers"
+
+import getSupabase from "@/db/supabase-server"
+
 import { getLanguage } from "@/lib/get-language"
 import { auth } from "@/lib/auth"
-import getSupabase from "@/db/supabase-server"
-import { cookies } from "next/headers"
 import { api } from "@/lib/api"
-import Team from "@/components/sections/team"
-import Purpose from "@/components/sections/purpose"
-import { Suspense } from "react"
+
+import About from "@/components/sections/about.about"
+import Team from "@/components/sections/team.about"
 
 export async function generateMetadata() {
 

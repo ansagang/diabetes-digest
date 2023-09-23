@@ -301,6 +301,9 @@
             // background: rgba(255, 255, 255, 0.8);
         }
     }
+    &__image{
+        height: 100%;
+    }
 }
 
 .select{
@@ -367,7 +370,7 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        width: 65%;
+        width: 100%;
     }
     &__link{
         border: 1px solid $secondary_color_2;
@@ -578,12 +581,6 @@
 }
 
 .team{
-    &__list{
-        margin-top: 50px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap:30px;
-    }
     &__member{
         &-img{
             width: 100%;
@@ -648,8 +645,8 @@
 }
 
 .sidebar{
-    width: 250px;
-    margin-right: 100px;
+    width: 300px;
+    margin-right: 70px;
     &__li{
         padding: 15px;
         border-radius: 7px;
@@ -679,4 +676,25 @@
     margin: 20px auto;
     padding: 0 20px;
     max-width: 1330px;
+}
+
+.account{
+    width: 100%;
+    &__inner{
+        width: 100%;
+        padding-bottom: 60px;
+    }
+    &__settings{
+        &-form{
+            margin-top: 40px;
+            &_line{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            &_input{
+                width: 49%;
+            }
+        }
+    }
 }

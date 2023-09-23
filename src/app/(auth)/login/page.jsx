@@ -1,5 +1,6 @@
 import { getLanguage } from "@/lib/get-language";
-import LoginForm from "@/components/sections/login-form";
+
+import Login from "@/components/sections/login";
 
 export async function generateMetadata() {
 
@@ -10,10 +11,10 @@ export async function generateMetadata() {
   }
 }
 
-export default async function Login() {
+export default async function LoginPage() {
   const language = await getLanguage({})
 
   return (
-    <LoginForm language={language} />
+    <Login language={language} />
   )
 }

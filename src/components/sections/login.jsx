@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useTransition } from "react"
+import { useState } from "react"
 
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -17,7 +17,7 @@ import { auth } from "@/lib/auth"
 
 import { providers } from "@/config/providers"
 
-export default function LoginForm({ language }) {
+export default function Login({ language }) {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -60,7 +60,7 @@ export default function LoginForm({ language }) {
                     }}>
                         <div className="auth__form-input">
                             <label>{language.app.labels.email}</label>
-                            <Input type='text' placeholder="ansagaang@gmail.com" value={email} onChange={((e) => setEmail(e.target.value))} />
+                            <Input type='text' placeholder="ansagang@gmail.com" value={email} onChange={((e) => setEmail(e.target.value))} />
                         </div>
                         <div className="auth__form-input">
                             <label>{language.app.labels.password}</label>

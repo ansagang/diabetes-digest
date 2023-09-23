@@ -1,4 +1,7 @@
+import { timestampDecode } from "@/lib/utils"
+
 export default function Events({language, events}) {
+
     return (
         <section className="events">
             <div className="container__fluid">
@@ -15,7 +18,14 @@ export default function Events({language, events}) {
                                     events.map((event) => (
                                         <div className="events__item">
                                             <div className="events__left">
-
+                                                <div className="events__img">
+                                                    <div className="events__img-day title">
+                                                        <h2>{timestampDecode({timestamp: event.time, language}).day.short}</h2>
+                                                    </div>
+                                                    <div className="events__img-date title">
+                                                        <h2>{timestampDecode({timestamp: event.time, language}).month}</h2>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div className="events__right">
                                                 

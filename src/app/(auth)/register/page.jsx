@@ -1,5 +1,6 @@
 import { getLanguage } from "@/lib/get-language";
-import RegisterForm from "@/components/sections/register-form";
+
+import Register from "@/components/sections/register";
 
 export async function generateMetadata() {
 
@@ -10,10 +11,10 @@ export async function generateMetadata() {
   }
 }
 
-export default async function Register() {
+export default async function RegisterPage() {
   const language = await getLanguage({})
 
   return (
-    <RegisterForm language={language} />
+    <Register language={language} />
   )
 }

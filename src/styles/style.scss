@@ -346,11 +346,6 @@
         z-index: $z_fixed;
         border-radius: 50%;
         backdrop-filter: saturate(180%) blur(5px);
-        & img{
-            // filter:blur(5px) saturate(180%);
-            // backdrop-filter: saturate(180%) blur(5px);
-            // background: rgba(255, 255, 255, 0.8);
-        }
     }
     &__image{
         height: 100%;
@@ -530,9 +525,6 @@
     &__content{
         &-info{
             margin-bottom: 30px;
-            &.info{
-                // font-size: 20px;
-            }
         }
     }
     &__list{

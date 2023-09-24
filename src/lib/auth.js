@@ -5,7 +5,8 @@ export const auth = {
     getUser: (props) => getUser(props),
     login: (props) => login(props),
     register: (props) => register(props),
-    update: (props) => update(props)
+    update: (props) => update(props),
+    signOut: (props) => signOut(props)
     // logino: (props) => logino(props)
 }
 
@@ -173,6 +174,26 @@ export async function register({ email, supabase, language, lang, password, full
                 success: false,
                 message: errors
             }
+        }
+    } catch (err) {
+        return {
+            success: false,
+            message: err.message
+        }
+    }
+}
+
+export async function signOut({ supabase, language}) {
+    try {
+        const { error } = await supabase.auth.signOut()
+
+        if (!error) {
+            return {
+                success: true,
+            }
+        } else {
+            const res = supabaseErrors({ error, language })
+            return res
         }
     } catch (err) {
         return {

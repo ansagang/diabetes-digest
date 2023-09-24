@@ -693,9 +693,11 @@
     &__li{
         padding: 15px;
         border-radius: 7px;
+        margin-bottom: 20px;
         & .link{
             display: flex;
             align-items: center;
+            color: $primary_color;
         }
         & svg{
             width: 23px;

@@ -1,4 +1,5 @@
 @import 'vars';
+@import 'style';
 
 @media (max-width: $breakpoint_laptop) {
     .container {
@@ -155,5 +156,5 @@
         }
     }
 
-    
+
 }

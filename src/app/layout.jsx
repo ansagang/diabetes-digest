@@ -1,5 +1,4 @@
 import '@/styles/adaptive.scss'
-import '@/styles/style.scss'
 
 import { Montserrat } from 'next/font/google'
 

@@ -33,6 +33,7 @@ export default function Login({ language }) {
             notification({ message: res.message, type: res.success ? 'success' : 'error' })
             if (res.success) {
                 router.push('/')
+                router.refresh()
             }
         } catch (err) {
             notification({ message: err.message, type: 'error' })

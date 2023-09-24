@@ -56,7 +56,7 @@ export async function login({ email, password, supabase, provider, language }) {
 
     try {
         if (provider) {
-            const { error } = await supabase.auth.signInWithOAuth({ provider: provider, options: { redirectTo: `${process.env.URL || window.location.origin}/auth/callback` } });
+            const { error } = await supabase.auth.signInWithOAuth({ provider: provider });
             if (!error) {
                 return {
                     success: true,
@@ -183,7 +183,7 @@ export async function register({ email, supabase, language, lang, password, full
     }
 }
 
-export async function signOut({ supabase, language}) {
+export async function signOut({ supabase, language }) {
     try {
         const { error } = await supabase.auth.signOut()
 

@@ -1,3 +1,4 @@
+import { cookies } from "next/headers"
 
 import Footer from "@/components/navigation/footer"
 import Header from "@/components/navigation/header"
@@ -5,13 +6,12 @@ import Header from "@/components/navigation/header"
 import { getUser } from "@/lib/auth"
 import { getLanguage } from "@/lib/get-language"
 
-import supabase from "@/db/supabase-server"
+import getSupabase from "@/db/supabase-server"
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
 
 export default async function MainLayout({ children }) {
 
+    const supabase = getSupabase(cookies)
     const { data: user } = await getUser({ supabase })
     const language = await getLanguage({ user, supabase })
 

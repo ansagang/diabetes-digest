@@ -57,7 +57,7 @@ export async function middleware(req) {
   if (req.nextUrl.pathname.startsWith('/api')) {
     const api_key = req.headers.get('x-api-key')
     if (!dev) {
-      if (api_key !== process.env.API_KEY) {
+      if (api_key) {
         return NextResponse.json({
           success: false,
           message: "Invalid api key"

@@ -7,6 +7,8 @@ import { getLanguage } from "@/lib/get-language"
 
 import supabase from "@/db/supabase-server"
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export default async function MainLayout({ children }) {
 

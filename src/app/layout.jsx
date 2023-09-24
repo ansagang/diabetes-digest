@@ -13,6 +13,7 @@ import supabase from '@/db/supabase-server'
 
 const font = Montserrat({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'] })
 export const revalidate = 0;
+export const dynamic = 'force-dynamic'
 
 export async function generateMetadata() {
 

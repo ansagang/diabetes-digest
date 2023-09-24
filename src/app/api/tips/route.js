@@ -4,6 +4,8 @@ import { NextResponse } from 'next/server'
 import { getLanguage } from '@/lib/get-language';
 import supabaseErrors from '@/db/supabase-errors';
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request) {
     try {
         const supabase = createRouteHandlerClient({ cookies });

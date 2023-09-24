@@ -1,7 +1,5 @@
-import 'server-only'
 import { headers } from "next/headers"
 import supabase from '@/db/supabase-server'
-import { cookies } from 'next/headers'
 
 const languages = {
   en: () => import('../config/lang/en.json').then((module) => module.default),

@@ -1,6 +1,6 @@
 import 'server-only'
 import { headers } from "next/headers"
-import getSupabase from '@/db/supabase-server'
+import supabase from '@/db/supabase-server'
 import { cookies } from 'next/headers'
 
 const languages = {
@@ -11,7 +11,6 @@ const languages = {
 
 export async function getLanguage({ locale, user }) {
   const headersList = headers()
-  const supabase = getSupabase(cookies)
 
   async function languageGet() {
     const headerLanguage = headersList.get("accept-language").split(",")[0].split("-")[0]

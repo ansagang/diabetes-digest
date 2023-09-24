@@ -1,12 +1,10 @@
-import { cookies } from "next/headers"
-import getSupabase from "@/db/supabase-server"
 import { auth } from "@/lib/auth"
 import { getLanguage } from "@/lib/get-language"
 import NotFound from "@/components/sections/not-found"
+import supabase from "@/db/supabase-server"
 
 export async function generateMetadata() {
 
-    const supabase = getSupabase(cookies)
     const { data: user } = await auth.getUser({ supabase })
     const language = await getLanguage({ user, supabase })
 
@@ -18,7 +16,6 @@ export async function generateMetadata() {
 
 export default async function NotFoundPage() {
 
-    const supabase = getSupabase(cookies)
     const { data: user } = await auth.getUser({ supabase })
 
     const language = await getLanguage({ user, supabase })

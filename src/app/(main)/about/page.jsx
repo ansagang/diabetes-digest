@@ -1,6 +1,6 @@
 import { cookies } from "next/headers"
 
-import getSupabase from "@/db/supabase-server"
+import supabase from "@/db/supabase-server"
 
 import { getLanguage } from "@/lib/get-language"
 import { auth } from "@/lib/auth"
@@ -11,7 +11,6 @@ import Team from "@/components/sections/team.about"
 
 export async function generateMetadata() {
 
-    const supabase = getSupabase(cookies)
     const user = await auth.getUser({ supabase })
     const language = await getLanguage({ user: user.data })
 
@@ -23,7 +22,6 @@ export async function generateMetadata() {
 
 export default async function AboutPage() {
 
-    const supabase = getSupabase(cookies)
     const user = await auth.getUser({ supabase })
     const language = await getLanguage({ user: user.data })
     const { data: team } = await api.getTeam({ language: language, revalidate: 0 })

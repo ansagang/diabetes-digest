@@ -1,10 +1,9 @@
-import { cookies } from "next/headers";
 
 import { getUser } from "@/lib/auth";
 import { getLanguage } from "@/lib/get-language";
 import { api } from "@/lib/api";
 
-import getSupabase from "@/db/supabase-server";
+import supabase from "@/db/supabase-server";
 
 import Hero from "@/components/sections/hero.home";
 import Suggestion from "@/components/sections/suggestion.home";
@@ -13,7 +12,6 @@ import Tip from "@/components/sections/tip.home";
 
 export async function generateMetadata() {
 
-  const supabase = getSupabase(cookies)
   const user = await getUser({ supabase })
   const language = await getLanguage({ user: user.data })
 
@@ -25,7 +23,6 @@ export async function generateMetadata() {
 
 export default async function Home() {
 
-  const supabase = getSupabase(cookies)
   const user = await getUser({ supabase })
   const language = await getLanguage({ user: user.data })
   const { data: users } = await api.getAllUsers({ language: language, revalidate: 3600 })

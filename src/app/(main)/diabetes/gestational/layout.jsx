@@ -1,16 +1,13 @@
-import { cookies } from "next/headers"
 
 
 import { auth } from "@/lib/auth"
 import { getLanguage } from "@/lib/get-language"
 
-import getSupabase from "@/db/supabase-server"
-
+import supabase from "@/db/supabase-server"
 import DiabetesHeader from "@/components/sections/diabetes-header.diabetes"
 
 export default async function DiabetesLayout({ children }) {
 
-    const supabase = getSupabase(cookies)
     const { data: user } = await auth.getUser({ supabase })
     const language = await getLanguage({ user, supabase })
 

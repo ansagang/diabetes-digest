@@ -41,10 +41,119 @@
     .header{
         &__nav{
             &-ol{
-                &.links{
-                    display: none;
+                display: none;
+            }
+        }
+        &__menu{
+            display: block;
+        }
+    }
+
+    .account{
+        &__settings{
+            &-form{
+                &_input{
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                &_line{
+                    display: block;
                 }
             }
         }
     }
+
+    .wrapper{
+        &__account{
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    .sidebar{
+        width: 100%;
+    }
+
+    .footer{
+        &__nav{
+            justify-content:space-between;
+        }
+        &__inner{
+            gap: 30px;
+            flex-direction: column;
+        }
+        &__logo{
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $breakpoint_phone) {
+    .wrapper{
+        &__auth{
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .background{
+        display: none;
+    }
+
+    .auth{
+        width: 100%;
+        height: 100%;
+    }
+
+    .footer{
+        &__nav{
+            flex-direction: column;
+            gap: 30px;
+        }
+    }
+
+    .list{
+        grid-template-columns: 1fr 1fr;
+        &__mini{
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .notification{
+        width: 90%;
+        animation: top 0.4s;
+        &__list{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            bottom: 20px;
+            width: 100%;
+            right: 0px;
+            left: 0px;
+        }
+        &.exit{
+            animation: bottom 0.4s;
+        }
+    }
+
+    .suggestion{
+        display: none;
+    }
+}
+
+@media (max-width: $breakpoint_phone_two) {
+    .hero{
+        &__content{
+            align-items: initial;
+        }
+    }
+
+    .tip{
+        &__card{
+            padding: 60px 40px;
+        }
+    }
+
+    
 }

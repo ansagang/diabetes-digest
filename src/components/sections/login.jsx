@@ -32,7 +32,6 @@ export default function Login({ language }) {
             const res = await auth.login({ email, password, supabase, provider, language })
             notification({ message: res.message, type: res.success ? 'success' : 'error' })
             if (res.success) {
-                router.refresh()
                 router.push('/')
             }
         } catch (err) {

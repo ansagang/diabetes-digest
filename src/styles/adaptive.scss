@@ -152,6 +152,12 @@
     .suggestion{
         display: none;
     }
+
+    .inner{
+        &__block{
+            padding: 60px 17px;
+        }
+    }
 }
 
 @media (max-width: $breakpoint_phone_two) {

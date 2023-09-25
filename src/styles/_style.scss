@@ -362,6 +362,7 @@
         display: flex;
         justify-content: space-between;
         padding: 11px 20px;
+        color: $primary_color !important;
         & svg{
             margin-left: 40px;
             transition: 0.1s ease transform;

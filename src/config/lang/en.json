@@ -607,7 +607,8 @@
             "register": "Register",
             "selectLanguage": "Select language",
             "goBack": "Go Back",
-            "signOut": "Sign Out"
+            "signOut": "Sign Out",
+            "update": "Update"
         },
         "labels": {
             "email": "Email",

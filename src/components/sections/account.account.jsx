@@ -55,7 +55,7 @@ export default function Account({ language, user }) {
                             <label>{language.app.labels.fullname}</label>
                             <Input type='text' placeholder="Ansar Aben" value={fullname} onChange={((e) => setFullname(e.target.value))} />
                         </div>
-                        <Button form={true} type='primary' className='account__settings-form_button' disabled={loading || email === user.email && fullname === user.full_name}>{language.app.buttons.login}</Button>
+                        <Button form={true} type='primary' className='account__settings-form_button' disabled={loading || email === user.email && fullname === user.full_name}>{language.app.buttons.update}</Button>
                     </form>
                 </div>
             </div>

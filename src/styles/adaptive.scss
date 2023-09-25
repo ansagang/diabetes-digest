@@ -158,6 +158,14 @@
             padding: 60px 17px;
         }
     }
+
+    .not-found{
+        &__404{
+            & h1{
+                font-size: 100px;
+            }
+        }
+    }
 }
 
 @media (max-width: $breakpoint_phone_two) {

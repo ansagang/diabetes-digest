@@ -1,12 +1,9 @@
 "use client"
 
-import { useRouter } from "next/navigation"
-
 import Button from "@/components/ui/button"
+import Link from "next/link"
 
 export default function NotFound({ language }) {
-
-    const router = useRouter()
 
     return (
         <section className="not-found">
@@ -23,7 +20,7 @@ export default function NotFound({ language }) {
                             <p>{language.app.pages.notFound.sections.notFound.info}</p>
                         </div>
                     </div>
-                    <Button onClick={() => router.back()} type={'primary'}>{language.app.buttons.goBack}</Button>
+                    <Link href={'/'}><Button className='not-found__button' type={'primary'}>{language.app.pages.main.meta.title}</Button></Link>
                 </div>
             </div>
         </section>

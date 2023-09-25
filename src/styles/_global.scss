@@ -92,7 +92,9 @@ button {
         }
 
         &:disabled{
-            filter: brightness(80%);
+            filter: brightness(85%);
+            // background-color: $secondary_color_2;
+            // border: 2px solid $secondary_color_2;
         }
     }
 

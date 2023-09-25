@@ -31,10 +31,14 @@ export default function Login({ language }) {
             setLoading(true)
             const res = await auth.login({ email, password, supabase, provider, language })
             notification({ message: res.message, type: res.success ? 'success' : 'error' })
-            // if (res.success) {
-            //     router.push('/')
-            //     router.refresh()
-            // }
+            if (res.success) {
+                if (provider) {
+
+                } else {
+                    router.push('/')
+                    router.refresh()
+                }
+            }
         } catch (err) {
             notification({ message: err.message, type: 'error' })
         } finally {

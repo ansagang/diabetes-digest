@@ -688,7 +688,7 @@
 }
 
 .sidebar{
-    width: 300px;
+    width: 350px;
     margin-right: 70px;
     &__li{
         padding: 15px;
@@ -732,13 +732,9 @@
     &__settings{
         &-form{
             margin-top: 40px;
-            &_line{
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 20px;
-            }
             &_input{
-                width: 49%;
+                width: 50%;
+                margin-bottom: 20px;
             }
         }
     }

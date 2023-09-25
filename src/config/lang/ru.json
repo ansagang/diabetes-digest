@@ -558,7 +558,7 @@
                 },
                 "sections": {
                     "details": {
-                        "title": "Details"
+                        "title": "Данные"
                     }
                 }
             },
@@ -644,7 +644,7 @@
                     "short": "Чт"
                 },
                 "friday": {
-                    "full": "Пятнциа",
+                    "full": "Пятница",
                     "short": "Пят"
                 },
                 "saturday": {
